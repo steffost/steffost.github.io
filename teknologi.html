@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ombra Prime - Teknologi</title>
+
+    <!-- Länkar in Tailwind CSS och Google Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Anpassad CSS för att matcha temat -->
+    <style>
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #050810;
+            color: #e2e8f0;
+        }
+
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3);
+        }
+
+        .nav-button {
+            background-color: rgba(0, 191, 255, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .nav-button:hover {
+            background-color: rgba(0, 191, 255, 0.3);
+            border-color: rgba(0, 191, 255, 0.8);
+            transform: translateY(-2px) scale(1.02);
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Huvudbehållare som centrerar allt -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+        
+        <!-- ===== HEADER-SEKTION (Konsekvent på alla sidor) ===== -->
+        <header class="text-center py-12">
+            <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">
+                OMBRA PRIME
+            </h1>
+            <p class="mt-4 text-lg text-cyan-300">
+                Ett arkiv för en ny mänsklighet
+            </p>
+        </header>
+
+        <!-- ===== HUVUDNAVIGERING (Konsekvent på alla sidor) ===== -->
+        <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
+            <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Hem</a>
+            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
+            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
+            <a href="teknologi.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
+            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
+        </nav>
+
+        <!-- ===== HUVUDINNEHÅLL (Den nya menyn) ===== -->
+        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700">
+            
+            <section id="tech-menu">
+                <h2 class="font-orbitron text-3xl text-white mb-2 text-center">Teknologiskt Arkiv</h2>
+                <p class="text-center text-gray-400 mb-8">Välj en teknologi från arkivet för att se detaljerad information.</p>
+                
+                <div class="divider my-6"></div>
+
+                <!-- Menybehållare -->
+                <div class="flex flex-col items-center gap-6 max-w-md mx-auto">
+                    
+                    <!-- Knapp för Antigravitationsmodul -->
+                    <a href="antigrav-modul.html" class="nav-button text-white font-semibold py-4 px-6 rounded-lg w-full text-xl">
+                        Antigravitationsmodul
+                    </a>
+
+                    <!-- Platzhållare för framtida knappar -->
+                    <a href="#" class="nav-button text-gray-600 font-semibold py-4 px-6 rounded-lg w-full text-xl cursor-not-allowed border-gray-700">
+                        The Breather (Kommer snart)
+                    </a>
+                    <a href="#" class="nav-button text-gray-600 font-semibold py-4 px-6 rounded-lg w-full text-xl cursor-not-allowed border-gray-700">
+                        Stasiskammare (Kommer snart)
+                    </a>
+
+                </div>
+            </section>
+
+        </main>
+
+        <!-- ===== FOOTER (Konsekvent på alla sidor) ===== -->
+        <footer class="text-center py-8 mt-8">
+            <p class="text-gray-500">
+                &copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.
+            </p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
