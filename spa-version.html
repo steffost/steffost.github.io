@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ombra Prime - Välkommen</title>
+
+    <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Länkar in Google Fonts för ett passande typsnitt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Anpassad CSS för att finjustera designen och lägga till teman -->
+    <style>
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+        .text-glow { text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3); }
+        body { background-color: #050810; }
+        .nav-button {
+            background-color: rgba(0, 191, 255, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            transition: all 0.3s ease;
+            cursor: pointer; /* Gör så att det ser ut som en knapp */
+        }
+        .nav-button:hover {
+            background-color: rgba(0, 191, 255, 0.3);
+            border-color: rgba(0, 191, 255, 0.8);
+            transform: translateY(-2px);
+        }
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
+        }
+        /* NYTT: Klass för att dölja sidor som inte är aktiva */
+        .page-section.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body class="font-rajdhani text-gray-300">
+
+    <!-- Huvudbehållare som centrerar allt innehåll -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+
+        <!-- ===== HEADER-SEKTION ===== -->
+        <header class="text-center py-12">
+            <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">
+                OMBRA PRIME
+            </h1>
+            <p class="mt-4 text-lg text-cyan-300">
+                Ett arkiv för en ny mänsklighet
+            </p>
+        </header>
+
+        <!-- ===== NAVIGERING (UPPDATERAD) ===== -->
+        <!-- Knapparna kallar nu på en JavaScript-funktion istället för att länka till en fil -->
+        <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
+            <a onclick="showPage('home')" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Hem</a>
+            <a onclick="showPage('gallery')" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
+            <a onclick="showPage('characters')" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
+            <a onclick="showPage('technology')" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
+            <a onclick="showPage('about')" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
+        </nav>
+
+        <!-- ===== HUVUDINNEHÅLL ===== -->
+        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700">
+            
+            <!-- SIDA 1: Hem (Synlig från start) -->
+            <section id="home" class="page-section">
+                <h2 class="font-orbitron text-3xl text-white mb-4">Välkommen till moderskeppet</h2>
+                <p class="text-lg leading-relaxed mb-4">
+                    Detta är ett levande arkiv och en utforskning av universumet Ombra Prime. Här dokumenteras mänsklighetens första steg ut i den stora rymden...
+                </p>
+                <p class="leading-relaxed">
+                    Projektet är skapat med verktyg som Unreal Engine, Blender och Substance Painter...
+                </p>
+            </section>
+
+            <!-- SIDA 2: Galleri (Dold från start) -->
+            <section id="gallery" class="page-section hidden">
+                <h2 class="font-orbitron text-3xl text-white mb-4">Galleri</h2>
+                <p class="text-lg leading-relaxed mb-4">
+                    Här kommer bilder och videoklipp från Ombra Prime-universumet att visas. Konceptkonst, 3D-modeller och scener från moderskeppet.
+                </p>
+                <!-- Exempel på bild-layout -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <img src="https://placehold.co/600x400/050810/00bfff?text=Bild+1" alt="Bild från galleriet" class="rounded-lg border-2 border-gray-700">
+                    <img src="https://placehold.co/600x400/050810/00bfff?text=Bild+2" alt="Bild från galleriet" class="rounded-lg border-2 border-gray-700">
+                </div>
+            </section>
+
+            <!-- SIDA 3: Karaktärer (Dold från start) -->
+            <section id="characters" class="page-section hidden">
+                <h2 class="font-orbitron text-3xl text-white mb-4">Karaktärer</h2>
+                <p class="text-lg leading-relaxed mb-4">
+                    Lär känna besättningen och de nyckelpersoner som formar mänsklighetens öde ombord på Ombra Prime.
+                </p>
+            </section>
+
+            <!-- SIDA 4: Teknologi (Dold från start) -->
+            <section id="technology" class="page-section hidden">
+                <h2 class="font-orbitron text-3xl text-white mb-4">Teknologi</h2>
+                <div class="md:flex md:gap-6 items-center">
+                    <img src="https://placehold.co/600x400/050810/00bfff?text=The+Breather" alt="Konceptbild av The Breather-teknologin" class="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 border-2 border-gray-700">
+                    <p class="leading-relaxed md:w-2/3">
+                        "The Breather" är mer än bara en maskin; det är en symbiotisk teknologi som gör det möjligt för människor att överleva och anpassa sig till främmande atmosfärer...
+                    </p>
+                </div>
+            </section>
+
+            <!-- SIDA 5: Om Projektet (Dold från start) -->
+            <section id="about" class="page-section hidden">
+                <h2 class="font-orbitron text-3xl text-white mb-4">Om Projektet</h2>
+                <p class="text-lg leading-relaxed mb-4">
+                    Information om skaparen, visionen bakom Ombra Prime och de verktyg som används för att förverkliga detta universum.
+                </p>
+            </section>
+
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="text-center py-8 mt-8">
+            <p class="text-gray-500">
+                &copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- ===== NYTT JAVASCRIPT ===== -->
+    <script>
+        // Sätter årtalet i footern
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Funktion för att visa en "sida" och dölja de andra
+        function showPage(pageId) {
+            // Hitta alla sektioner som fungerar som sidor
+            const pages = document.querySelectorAll('.page-section');
+            
+            // Gå igenom varje sida och dölj den
+            pages.forEach(page => {
+                page.classList.add('hidden');
+            });
+            
+            // Hitta den specifika sidan vi vill visa
+            const pageToShow = document.getElementById(pageId);
+            
+            // Ta bort 'hidden'-klassen för att göra den synlig
+            if (pageToShow) {
+                pageToShow.classList.remove('hidden');
+            }
+        }
+    </script>
+
+</body>
+</html>
