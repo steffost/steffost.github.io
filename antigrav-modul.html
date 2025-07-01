@@ -3,114 +3,529 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ombra Prime - Teknologi</title>
-
-    <!-- Länkar in Tailwind CSS och Google Fonts -->
+    <title>Flödesschema: Energieffektiv Antigravitationsmodul</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Anpassad CSS för att matcha temat -->
     <style>
+        :root {
+            /* High-Contrast Flow Colors */
+            --quantum-line-color: #39ff14; 
+            --graviton-line-color: #1f51ff;
+            --power-line-color: #ffff00;   
+            --control-line-color: #ff4500; 
+            --highlight-color: #ff00ff;
+
+            /* UI colors */
+            --bg-color: #0c1018; 
+            --bg-color-light: #1a202c;
+            --bg-module-color: #111827;
+            --text-color: #e2e8f0;
+            --text-color-dim: #a0aec0;
+            --status-green: #48bb78;
+            --status-yellow: #f6e05e;
+            --status-red: #f56565;
+            --ui-glow: #1f51ff; 
+            --ui-glow-faint: rgba(31, 81, 255, 0.5);
+        }
+
         body {
             font-family: 'Rajdhani', sans-serif;
-            background-color: #050810;
-            color: #e2e8f0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            overflow: hidden;
         }
 
         .font-orbitron {
             font-family: 'Orbitron', sans-serif;
         }
         
-        .text-glow {
-            text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3);
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1rem;
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
         }
 
-        .nav-button {
-            background-color: rgba(0, 191, 255, 0.1);
-            border: 1px solid rgba(0, 191, 255, 0.4);
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-        .nav-button:hover {
-            background-color: rgba(0, 191, 255, 0.3);
-            border-color: rgba(0, 191, 255, 0.8);
-            transform: translateY(-2px) scale(1.02);
+        .system-container, #controls-container {
+            background-color: rgba(12, 16, 24, 0.97);
+            border: 1px solid var(--ui-glow);
+            box-shadow: 0 0 20px rgba(31, 81, 255, 0.4), inset 0 0 15px rgba(31, 81, 255, 0.2);
+            position: relative;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
         }
         
-        .divider {
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
+        #controls-container {
+            width: 320px;
+            justify-content: space-around;
         }
+        
+        .background-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at center, rgba(31, 81, 255, 0.1) 0%, transparent 40%),
+                linear-gradient(transparent 98%, rgba(31, 81, 255, 0.2) 100%),
+                linear-gradient(90deg, transparent 98%, rgba(31, 81, 255, 0.2) 100%);
+            background-size: 100% 100%, 50px 50px, 50px 50px;
+            z-index: 0;
+            animation: pulse-grid 10s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-grid {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.02); }
+        }
+
+        .system-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 0.5rem;
+            box-shadow: inset 0 0 120px 40px var(--bg-color);
+            pointer-events: none;
+            z-index: 2; 
+        }
+
+        .control-group h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--ui-glow);
+            text-align: center;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 1.25rem;
+        }
+
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]:focus {
+            outline: none;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            cursor: pointer;
+            background: var(--bg-color-light);
+            border-radius: 5px;
+            border: 1px solid var(--ui-glow);
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: var(--ui-glow);
+            cursor: pointer;
+            margin-top: -9px;
+            box-shadow: 0 0 10px var(--ui-glow);
+        }
+        
+        #diagram-container { position: relative; z-index: 3; width: 100%; height: 100%; flex-grow: 1; }
+
+        .node {
+            background-color: var(--bg-color-light); border: 1px solid var(--ui-glow); border-radius: 0.5rem;
+            box-shadow: 0 0 8px rgba(31, 81, 255, 0.3); transition: all 0.3s ease; cursor: pointer;
+            position: absolute; width: 170px; height: 85px; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; text-align: center; padding: 8px; font-size: 0.9rem; line-height: 1.2;
+        }
+        .node:hover { transform: scale(1.05) translate(-50%, -50%); box-shadow: 0 0 15px var(--highlight-color); border-color: var(--highlight-color); color: var(--highlight-color); }
+        .node.highlight { transform: scale(1.05) translate(-50%, -50%); box-shadow: 0 0 20px var(--highlight-color), 0 0 30px var(--highlight-color); border-color: var(--highlight-color); color: var(--highlight-color); }
+        
+        /* UPDATED: Triple-frame effect for modules */
+        .module-node {
+            background-color: var(--bg-module-color);
+            border: 1px solid var(--ui-glow);
+            box-shadow: 
+                inset 0 0 0 2px var(--bg-color), 
+                inset 0 0 0 4px var(--ui-glow-faint),
+                0 0 12px rgba(31, 81, 255, 0.5);
+        }
+        
+        .connector-line { stroke-width: 2.5px; opacity: 0.7; }
+        .connector-line.quantum { stroke: var(--quantum-line-color); }
+        .connector-line.graviton { stroke: var(--graviton-line-color); }
+        .connector-line.power { stroke: var(--power-line-color); }
+        .connector-line.control { stroke: var(--control-line-color); }
+        .connector-line.highlight { opacity: 1; stroke-width: 4px; stroke: var(--highlight-color); }
+        .flow-pulse { stroke-width: 2; stroke: rgba(255,255,255,0.3); transition: fill 0.5s ease, filter 0.5s ease; }
+        
+        #info-modal {
+            position: fixed;
+            display: none;
+            width: 320px;
+            max-width: 90vw;
+            z-index: 100;
+            background-color: var(--bg-color-light);
+            border: 1px solid var(--ui-glow);
+            box-shadow: 0 0 25px rgba(31, 81, 255, 0.5);
+        }
+        #modal-overlay { 
+            position: fixed;
+            display: none;
+            inset: 0;
+            z-index: 99;
+            background-color: rgba(0,0,0,0.6);
+        }
+
+        #stability-meter {
+            border: 2px solid var(--ui-glow);
+            padding: 4px;
+            border-radius: 0.5rem;
+        }
+        #stability-bar {
+            background-color: var(--status-green);
+            height: 20px;
+            border-radius: 0.25rem;
+            transition: width 0.5s ease, background-color 0.5s ease;
+            box-shadow: 0 0 10px var(--status-green);
+        }
+        
     </style>
 </head>
-<body>
+<body class="bg-gray-900 text-gray-200 flex items-center justify-center h-screen p-4">
 
-    <!-- Huvudbehållare som centrerar allt -->
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        
-        <!-- ===== HEADER-SEKTION (Konsekvent på alla sidor) ===== -->
-        <header class="text-center py-12">
-            <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">
-                OMBRA PRIME
-            </h1>
-            <p class="mt-4 text-lg text-cyan-300">
-                Ett arkiv för en ny mänsklighet
-            </p>
-        </header>
+    <div class="main-grid max-w-[1700px] max-h-[950px]">
+        <div class="system-container">
+            <div class="background-grid"></div>
+            <div id="main-title-container" class="text-center mb-4 relative z-10 cursor-pointer">
+                <h1 class="font-orbitron text-2xl md:text-3xl" style="color: var(--ui-glow);">Antigravitationsmodul Status</h1>
+                <p class="text-sm md:text-base" style="color: var(--ui-glow); opacity: 0.8;">Systemflöde: Nollpunktsenergi & Kvantmanipulation</p>
+            </div>
+            <div id="diagram-container">
+                <svg id="connector-svg" class="absolute top-0 left-0 w-full h-full pointer-events-none"></svg>
+            </div>
+        </div>
 
-        <!-- ===== HUVUDNAVIGERING (Konsekvent på alla sidor) ===== -->
-        <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
-            <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Hem</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
-            <a href="teknologi.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
-        </nav>
-
-        <!-- ===== HUVUDINNEHÅLL (Den nya menyn) ===== -->
-        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700">
-            
-            <section id="tech-menu">
-                <h2 class="font-orbitron text-3xl text-white mb-2 text-center">Teknologiskt Arkiv</h2>
-                <p class="text-center text-gray-400 mb-8">Välj en teknologi från arkivet för att se detaljerad information.</p>
-                
-                <div class="divider my-6"></div>
-
-                <!-- Menybehållare -->
-                <div class="flex flex-col items-center gap-6 max-w-md mx-auto">
-                    
-                    <!-- Knapp för Antigravitationsmodul -->
-                    <a href="antigrav-modul.html" class="nav-button text-white font-semibold py-4 px-6 rounded-lg w-full text-xl">
-                        Antigravitationsmodul
-                    </a>
-
-                    <!-- Platzhållare för framtida knappar -->
-                    <a href="#" class="nav-button text-gray-600 font-semibold py-4 px-6 rounded-lg w-full text-xl cursor-not-allowed border-gray-700">
-                        The Breather (Kommer snart)
-                    </a>
-                    <a href="#" class="nav-button text-gray-600 font-semibold py-4 px-6 rounded-lg w-full text-xl cursor-not-allowed border-gray-700">
-                        Stasiskammare (Kommer snart)
-                    </a>
-
-                </div>
-            </section>
-
-        </main>
-
-        <!-- ===== FOOTER (Konsekvent på alla sidor) ===== -->
-        <footer class="text-center py-8 mt-8">
-            <p class="text-gray-500">
-                &copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.
-            </p>
-        </footer>
-
+        <div id="controls-container">
+            <div class="control-group"><h3>Systemkalibrering</h3></div>
+            <div class="control-group">
+                <label for="resonance-slider" class="block text-center text-lg mb-1">Nollpunkts-Resonans</label>
+                <input id="resonance-slider" type="range" min="20" max="100" value="95">
+                <div class="text-center text-xl font-orbitron"><span id="resonance-value">95</span>%</div>
+            </div>
+             <div class="control-group">
+                <label for="charge-slider" class="block text-center text-lg mb-1">Kondensator-Laddning</label>
+                <input id="charge-slider" type="range" min="50" max="110" value="98">
+                <div class="text-center text-xl font-orbitron"><span id="charge-value">98</span>%</div>
+            </div>
+            <div class="control-group">
+                <label for="capture-slider" class="block text-center text-lg mb-1">Graviton-Fångst</label>
+                <input id="capture-slider" type="range" min="50" max="100" value="90">
+                <div class="text-center text-xl font-orbitron"><span id="capture-value">90</span>%</div>
+            </div>
+            <div class="control-group">
+                <label for="focus-slider" class="block text-center text-lg mb-1">Fält-Fokusering</label>
+                <input id="focus-slider" type="range" min="50" max="120" value="87">
+                <div class="text-center text-xl font-orbitron"><span id="focus-value">87</span>%</div>
+            </div>
+            <div class="control-group mt-2">
+                <h3 class="mb-2">Systemstabilitet & Output</h3>
+                <div id="stability-meter"><div id="stability-bar" style="width: 0%;"></div></div>
+                <div id="stability-text" class="text-center mt-2 text-2xl font-orbitron">0%</div>
+            </div>
+        </div>
     </div>
+    
+    <div id="info-modal" class="p-6 rounded-xl text-white">
+        <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-400 hover:text-white transition-colors">
+             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <h2 id="modal-title" class="font-orbitron text-xl mb-2"></h2>
+        <div id="modal-status-container" class="flex items-center mb-3">
+            <div id="modal-status-light" class="w-3 h-3 rounded-full mr-3"></div>
+            <span id="modal-status-text" class="text-lg"></span>
+        </div>
+        <p id="modal-description" class="text-sm leading-relaxed"></p>
+    </div>
+    <div id="modal-overlay" onclick="closeModal()"></div>
+
 
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+        const statusTypes = {
+            GREEN: { color: 'var(--status-green)', text: 'OPTIMAL' },
+            YELLOW: { color: 'var(--status-yellow)', text: 'FLUKTUERAR' },
+            RED: { color: 'var(--status-red)', text: 'KRITISK' }
+        };
 
+        const nodes = {
+            'nollpunkt': { text: 'Nollpunktsenergi', desc: 'Den grundläggande energin i vakuum. Extraherar virtuella partiklar från nollpunktsfältet.', pos: { x: 15, y: 15 }, baseValue: 100, unit: '%' },
+            'kvantres': { text: 'Kvantresonanskammare', desc: 'Exciterar nollpunktsfältet och omvandlar den virtuella energin till en användbar kvantform.', pos: { x: 15, y: 50 }, baseValue: 1.21, unit: ' GW' },
+            'kondensator': { text: 'Energikondensator', desc: 'Systemets centrala batteri. Stabiliserar kvantenergin och distribuerar den som primär driftström.', pos: { x: 15, y: 85 }, baseValue: 98.2, unit: '% Cap.' },
+            'fangare': { text: 'Gravitonfångare', desc: 'Drivs av kondensatorn. Isolerar gravitoner från den lokala rumtiden.', pos: { x: 50, y: 15 }, baseValue: 7.3, unit: 'e12/s' },
+            'gravitoner': { text: 'Isolerade Gravitoner', desc: 'Fångade gravitoner som omedelbart omvandlas till ett motfält och modulationsenergi.', pos: { x: 50, y: 50 }, baseValue: 4.1, unit: 'e15' },
+            'motfalt': { text: 'Gravitationsmotverkande fält', desc: 'Ett svagt, repulsivt gravitationsfält som genereras från gravitonerna. Detta är fältet som ska förstärkas.', pos: { x: 85, y: 35 }, baseValue: 0.2, unit: ' g' },
+            'elenergi': { text: 'Modulationsenergi', desc: 'En högfrekvent energisignal som är en biprodukt av graviton-omvandling. Används för att finjustera fältriktaren.', pos: { x: 50, y: 85 }, baseValue: 450, unit: ' MW' },
+            'riktare': { text: 'Fältriktare', desc: 'Systemets hjärta. Använder primär driftström, modulationsenergi och det svaga motfältet för att generera den slutliga outputen.', pos: { x: 85, y: 65 }, baseValue: 87.5, unit: '%' },
+            'kontroll': { text: 'Exakt Kontroll / Rörelse', desc: 'Systemets slutgiltiga output. Ett kraftfullt och precist styrt antigravitationsfält.', pos: { x: 85, y: 92 }, baseValue: 1.00, unit: ' G' }
+        };
+        Object.values(nodes).forEach(n => { n.value = n.baseValue; n.status = statusTypes.GREEN; });
+
+        const connections = [
+            { from: 'nollpunkt', to: 'kvantres', animated: true, type: 'quantum' },
+            { from: 'kvantres', to: 'kondensator', animated: true, type: 'quantum' },
+            { from: 'kondensator', to: 'fangare', animated: true, type: 'power' },
+            { from: 'fangare', to: 'gravitoner', animated: true, type: 'graviton' },
+            { from: 'gravitoner', to: 'motfalt', animated: true, type: 'graviton' },
+            { from: 'gravitoner', to: 'elenergi', animated: true, type: 'power' },
+            { from: 'elenergi', to: 'riktare', animated: true, type: 'power' },
+            { from: 'motfalt', to: 'riktare', animated: true, type: 'graviton' },
+            { from: 'kondensator', to: 'riktare', animated: true, type: 'power' },
+            { from: 'riktare', to: 'kontroll', animated: true, type: 'control' }
+        ];
+        
+        let diagramContainer, svg, sliders, values, stabilityBar, stabilityText;
+        let modal, modalOverlay, modalTitle, modalDescription, modalStatusContainer, modalStatusLight, modalStatusText;
+        let mainTitleContainer;
+
+        function createNodes() {
+            const module_ids = ['kvantres', 'kondensator', 'fangare', 'riktare'];
+            Object.keys(nodes).forEach(id => {
+                const node = nodes[id];
+                const nodeEl = document.createElement('div');
+                nodeEl.id = id;
+                nodeEl.className = 'node';
+                if (module_ids.includes(id)) {
+                    nodeEl.classList.add('module-node');
+                }
+                nodeEl.style.left = `${node.pos.x}%`;
+                nodeEl.style.top = `${node.pos.y}%`;
+                nodeEl.style.transform = 'translate(-50%, -50%)';
+                nodeEl.innerHTML = `<div class="node-text">${node.text}</div><div class="status-container"><div id="light-${id}" class="status-light"></div><span id="stat-${id}"></span></div>`;
+                nodeEl.addEventListener('click', (event) => showNodeModal(id, event));
+                nodeEl.addEventListener('mouseenter', () => highlightConnections(id));
+                nodeEl.addEventListener('mouseleave', () => clearHighlights());
+                diagramContainer.appendChild(nodeEl);
+            });
+        }
+
+        function drawConnections() {
+            if (!diagramContainer) return;
+            svg.innerHTML = '';
+            const containerRect = diagramContainer.getBoundingClientRect();
+            if (containerRect.width === 0) return;
+            connections.forEach((conn) => {
+                const fromNode = document.getElementById(conn.from);
+                const toNode = document.getElementById(conn.to);
+                if (!fromNode || !toNode) return;
+                const fromRect = fromNode.getBoundingClientRect();
+                const toRect = toNode.getBoundingClientRect();
+                if (fromRect.width === 0 || toRect.width === 0) return;
+                const x1 = fromRect.left + fromRect.width / 2 - containerRect.left;
+                const y1 = fromRect.top + fromRect.height / 2 - containerRect.top;
+                const x2 = toRect.left + toRect.width / 2 - containerRect.left;
+                const y2 = toRect.top + toRect.height / 2 - containerRect.top;
+                const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                line.setAttribute('x1', x1); line.setAttribute('y1', y1);
+                line.setAttribute('x2', x2); line.setAttribute('y2', y2);
+                line.className = `connector-line conn-${conn.from} conn-${conn.to} ${conn.type}`;
+                svg.appendChild(line);
+                if (conn.animated) {
+                    const pulse = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+                    pulse.id = `pulse-${conn.from}-${conn.to}`;
+                    pulse.setAttribute('r', '7');
+                    pulse.className = 'flow-pulse';
+                    const animate = document.createElementNS('http://www.w3.org/2000/svg', 'animateMotion');
+                    animate.setAttribute('path', `M${x1} ${y1} L${x2} ${y2}`);
+                    animate.setAttribute('dur', `${2 + Math.random()}s`);
+                    animate.setAttribute('repeatCount', 'indefinite');
+                    pulse.appendChild(animate);
+                    svg.appendChild(pulse);
+                }
+            });
+        }
+
+        function updateSystemState() {
+            const resonance = sliders.resonance.value / 100;
+            const charge = sliders.charge.value / 100;
+            const capture = sliders.capture.value / 100;
+            const focus = sliders.focus.value / 100;
+            nodes.nollpunkt.value = nodes.nollpunkt.baseValue * resonance;
+            nodes.kvantres.value = nodes.kvantres.baseValue * resonance;
+            const powerIn = nodes.kvantres.value;
+            const powerDemand = (nodes.fangare.baseValue * capture / 7.3) + (nodes.riktare.baseValue * focus / 87.5);
+            const chargeBalance = (powerIn / (powerDemand * 0.7)) * charge;
+            nodes.kondensator.value = Math.min(110, nodes.kondensator.baseValue * chargeBalance);
+            const capacitorPower = Math.max(0, nodes.kondensator.value / 100);
+            nodes.fangare.value = nodes.fangare.baseValue * capture * capacitorPower;
+            nodes.gravitoner.value = nodes.gravitoner.baseValue * capture * capacitorPower;
+            const gravitonOutput = nodes.gravitoner.value / nodes.gravitoner.baseValue;
+            nodes.motfalt.value = nodes.motfalt.baseValue * gravitonOutput;
+            nodes.elenergi.value = nodes.elenergi.baseValue * gravitonOutput;
+            nodes.riktare.value = focus * 100;
+            const finalPower = (capacitorPower + gravitonOutput) / 2;
+            nodes.kontroll.value = nodes.kontroll.baseValue * finalPower * (focus * 1.2);
+            Object.keys(nodes).forEach(id => {
+                const n = nodes[id];
+                let ratio = n.value / n.baseValue;
+                if (id === 'kondensator') ratio = n.value / 100;
+                if (id === 'kondensator' && n.value > 100) {
+                    if (n.value > 105) n.status = statusTypes.RED;
+                    else n.status = statusTypes.YELLOW;
+                } else if (id === 'riktare') {
+                    if (n.value > 110) n.status = statusTypes.RED;
+                    else if (n.value > 100) n.status = statusTypes.YELLOW;
+                    else n.status = statusTypes.GREEN;
+                } else {
+                    if (ratio < 0.6) n.status = statusTypes.RED;
+                    else if (ratio < 0.8) n.status = statusTypes.YELLOW;
+                    else n.status = statusTypes.GREEN;
+                }
+            });
+            let score = 100;
+            const optimalRanges = { resonance: [90, 100], charge: [95, 105], capture: [85, 100], focus: [80, 100] };
+            Object.keys(sliders).forEach(key => {
+                const val = sliders[key].value;
+                const [min, max] = optimalRanges[key];
+                if (val < min) score -= (min - val);
+                if (val > max) score -= (val - max) * 1.5;
+            });
+            score = Math.max(0, score);
+            stabilityBar.style.width = `${score}%`;
+            stabilityText.textContent = `${score.toFixed(0)}%`;
+            if (score < 50) { stabilityBar.style.backgroundColor = 'var(--status-red)'; stabilityBar.style.boxShadow = `0 0 10px var(--status-red)`; }
+            else if (score < 85) { stabilityBar.style.backgroundColor = 'var(--status-yellow)'; stabilityBar.style.boxShadow = `0 0 10px var(--status-yellow)`; }
+            else { stabilityBar.style.backgroundColor = 'var(--status-green)'; stabilityBar.style.boxShadow = `0 0 10px var(--status-green)`; }
+            Object.keys(nodes).forEach(id => {
+                const node = nodes[id];
+                const statEl = document.getElementById(`stat-${id}`);
+                const lightEl = document.getElementById(`light-${id}`);
+                if (statEl && lightEl) {
+                    let decimals = node.unit.includes('e12') || node.unit.includes('e15') ? 1 : 2;
+                    if (id === 'kondensator') decimals = 1;
+                    statEl.textContent = `${node.value.toFixed(decimals)}${node.unit}`;
+                    lightEl.style.backgroundColor = node.status.color;
+                }
+            });
+            connections.forEach(conn => {
+                if (conn.animated) {
+                    const pulse = document.getElementById(`pulse-${conn.from}-${conn.to}`);
+                    if (pulse) {
+                        const sourceNodeStatusColor = nodes[conn.from].status.color;
+                        pulse.style.fill = sourceNodeStatusColor;
+                        pulse.style.filter = `drop-shadow(0 0 8px ${sourceNodeStatusColor})`;
+                    }
+                }
+            });
+        }
+        
+        function setupEventListeners() {
+            Object.keys(sliders).forEach(key => {
+                sliders[key].addEventListener('input', (e) => {
+                    values[key].textContent = e.target.value;
+                    updateSystemState();
+                });
+            });
+            mainTitleContainer.addEventListener('click', showSystemModal);
+        }
+        
+        function showNodeModal(nodeId, event) {
+            const nodeData = nodes[nodeId];
+            modalTitle.textContent = nodeData.text;
+            modalDescription.textContent = nodeData.desc;
+            
+            modalStatusContainer.style.display = 'flex';
+            modalStatusLight.style.backgroundColor = nodeData.status.color;
+            modalStatusText.textContent = `STATUS: ${nodeData.status.text} | VÄRDE: ${nodeData.value.toFixed(2)}${nodeData.unit}`;
+            
+            modal.style.display = 'block';
+            modalOverlay.style.display = 'block';
+            
+            const rect = event.currentTarget.getBoundingClientRect();
+            const modalWidth = modal.offsetWidth;
+            const spacing = 15;
+            let left = rect.right + spacing;
+            if (left + modalWidth > window.innerWidth) {
+                left = rect.left - modalWidth - spacing;
+            }
+            modal.style.left = `${left}px`;
+            modal.style.top = `${rect.top}px`;
+        }
+
+        function showSystemModal() {
+            modalTitle.textContent = 'Systemöversikt: Antigravitationsmodul';
+            modalDescription.textContent = `Detta system representerar en sluten och självförsörjande antigravitationsmotor som fungerar genom två sammankopplade kretsar: Energikretsen och Gravitationskretsen. Energikretsen utvinner nollpunktsenergi och omvandlar den till stabil, elektrisk kraft. Denna kraft driver Gravitationskretsen, som fångar och manipulerar gravitoner för att skapa ett kontrollerbart, motverkande gravitationsfält. Systemets hjärta är Fältriktaren, som tar emot kraft och signaler från båda kretsarna för att forma den slutgiltiga outputen som ger exakt rörelsekontroll.`;
+            
+            modalStatusContainer.style.display = 'none';
+
+            modal.style.display = 'block';
+            modalOverlay.style.display = 'block';
+
+            // Center the modal
+            modal.style.left = '50%';
+            modal.style.top = '50%';
+            modal.style.transform = 'translate(-50%, -50%)';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+            modalOverlay.style.display = 'none';
+        }
+
+        function highlightConnections(nodeId) {
+            clearHighlights();
+            document.getElementById(nodeId).classList.add('highlight');
+            document.querySelectorAll(`.conn-${nodeId}`).forEach(line => line.classList.add('highlight'));
+        }
+
+        function clearHighlights() {
+            document.querySelectorAll('.node.highlight').forEach(el => el.classList.remove('highlight'));
+            document.querySelectorAll('.connector-line.highlight').forEach(el => el.classList.remove('highlight'));
+        }
+        
+        window.onload = () => { 
+            diagramContainer = document.getElementById('diagram-container');
+            svg = document.getElementById('connector-svg');
+            sliders = {
+                resonance: document.getElementById('resonance-slider'),
+                charge: document.getElementById('charge-slider'),
+                capture: document.getElementById('capture-slider'),
+                focus: document.getElementById('focus-slider')
+            };
+            values = {
+                resonance: document.getElementById('resonance-value'),
+                charge: document.getElementById('charge-value'),
+                capture: document.getElementById('capture-value'),
+                focus: document.getElementById('focus-value')
+            };
+            stabilityBar = document.getElementById('stability-bar');
+            stabilityText = document.getElementById('stability-text');
+            modal = document.getElementById('info-modal');
+            modalOverlay = document.getElementById('modal-overlay');
+            modalTitle = document.getElementById('modal-title');
+            modalDescription = document.getElementById('modal-description');
+            modalStatusContainer = document.getElementById('modal-status-container');
+            modalStatusLight = document.getElementById('modal-status-light');
+            modalStatusText = document.getElementById('modal-status-text');
+            mainTitleContainer = document.getElementById('main-title-container');
+
+            createNodes(); 
+            setupEventListeners();
+            setTimeout(() => {
+                drawConnections();
+                Object.keys(sliders).forEach(key => {
+                    values[key].textContent = sliders[key].value;
+                });
+                updateSystemState();
+            }, 50);
+            window.onresize = drawConnections;
+        };
+    </script>
 </body>
 </html>
