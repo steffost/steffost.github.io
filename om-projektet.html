@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ombra Prime - Välkommen</title>
+    <title>Ombra Prime - Om Projektet</title>
 
     <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,37 +15,20 @@
 
     <!-- Anpassad CSS för att finjustera designen och lägga till teman -->
     <style>
-        /* Här definierar vi de typsnitt vi laddade ner från Google Fonts */
-        .font-orbitron {
-            font-family: 'Orbitron', sans-serif;
-        }
-        .font-rajdhani {
-            font-family: 'Rajdhani', sans-serif;
-        }
-
-        /* Enkel glöd-effekt för text, passar sci-fi-temat */
-        .text-glow {
-            text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3);
-        }
-
-        /* Anpassad bakgrundsfärg */
-        body {
-            background-color: #050810; /* En mycket mörk blå, nästan svart */
-        }
-
-        /* Stil för navigeringsknapparna */
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+        .text-glow { text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3); }
+        body { background-color: #050810; }
         .nav-button {
-            background-color: rgba(0, 191, 255, 0.1); /* Genomskinlig blå */
+            background-color: rgba(0, 191, 255, 0.1);
             border: 1px solid rgba(0, 191, 255, 0.4);
-            transition: all 0.3s ease; /* Mjuk övergång för hover-effekten */
+            transition: all 0.3s ease;
         }
         .nav-button:hover {
             background-color: rgba(0, 191, 255, 0.3);
             border-color: rgba(0, 191, 255, 0.8);
-            transform: translateY(-2px); /* Liten lyft-effekt */
+            transform: translateY(-2px);
         }
-        
-        /* En subtil linje för att separera sektioner */
         .divider {
             height: 1px;
             background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
@@ -58,7 +41,6 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
 
         <!-- ===== HEADER-SEKTION ===== -->
-        <!-- Här ligger huvudtiteln för sidan. -->
         <header class="text-center py-12">
             <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">
                 OMBRA PRIME
@@ -69,52 +51,69 @@
         </header>
 
         <!-- ===== NAVIGERING ===== -->
-        <!-- Det här är huvudmenyn. Byt ut '#' mot filnamnet för dina nya sidor, t.ex. "galleri.html". -->
         <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
             <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Hem</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
+            <a href="galleri.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
+            <a href="karaktarer.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
+            <a href="teknologi.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
+            <a href="om-projektet.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
         </nav>
 
         <!-- ===== HUVUDINNEHÅLL ===== -->
-        <!-- Det är här du skriver det mesta av din text och lägger in bilder. -->
         <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700">
             
-            <!-- Välkomstsektion -->
-            <section id="welcome">
-                <h2 class="font-orbitron text-3xl text-white mb-4">Välkommen till moderskeppet</h2>
+            <!-- Projektets Vision -->
+            <section id="vision">
+                <h2 class="font-orbitron text-3xl text-white mb-4">Projektets Vision</h2>
                 <p class="text-lg leading-relaxed mb-4">
-                    Detta är ett levande arkiv och en utforskning av universumet Ombra Prime. Här dokumenteras mänsklighetens första steg ut i den stora rymden, möjliggjort av den revolutionerande teknologin "The Breather". Följ med på resan ombord på det gigantiska moderskeppet som är vårt hem och vår framtid.
+                    Ombra Prime är mer än bara en berättelse; det är en plattform för utforskning. Genom att använda ett science fiction-universum som vår duk, strävar projektet efter att undersöka komplexa livsfrågor, mänskliga relationer och de filosofiska dilemman som uppstår när mänskligheten tar steget ut i det okända.
                 </p>
                 <p class="leading-relaxed">
-                    Projektet är skapat med verktyg som Unreal Engine, Blender och Substance Painter för att visuellt utforska de stora livsfrågor som uppstår när människan tar klivet ut i det okända.
+                    Varje karaktär, varje teknologi och varje händelse är utformad för att ställa frågor – om plikt, frihet, skapande och vad det egentligen innebär att vara människa i en framtid där gränserna ständigt omförhandlas.
                 </p>
             </section>
 
             <div class="divider my-8"></div>
 
-            <!-- Exempelsektion för att visa hur du lägger till mer innehåll -->
-            <section id="the-breather">
-                <h3 class="font-orbitron text-2xl text-white mb-4">Teknologin: The Breather</h3>
-                <div class="md:flex md:gap-6 items-center">
-                    <!-- Byt ut placeholder-bilden mot en egen bild. Lägg den i en "images"-mapp och ändra src-länken. -->
-                    <img src="https://placehold.co/600x400/050810/00bfff?text=The+Breather" 
-                         alt="Konceptbild av The Breather-teknologin" 
-                         class="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 border-2 border-gray-700">
-                    <p class="leading-relaxed md:w-2/3">
-                        <!-- Här kan du skriva mer om The Breather. -->
-                        "The Breather" är mer än bara en maskin; det är en symbiotisk teknologi som gör det möjligt för människor att överleva och anpassa sig till främmande atmosfärer. Den analyserar och omvandlar omgivningen på molekylär nivå, vilket är grunden för vår interstellära kolonisation. Här kommer vi att utforska dess funktion, ursprung och de etiska dilemman den medför.
-                    </p>
-                </div>
+            <!-- Universumet -->
+            <section id="universe">
+                <h2 class="font-orbitron text-3xl text-white mb-4">Universumet: Ombra Prime</h2>
+                <p class="leading-relaxed mb-4">
+                    Berättelsen utspelar sig ombord på det gigantiska moderskeppet Ombra Prime, en ark för mänsklighetens framtid. I en tid då de första interstellära kolonierna etableras, är Ombra Prime både ett hem och en symbol för hopp. Centralt i denna nya era är teknologin "The Breather", en revolutionerande uppfinning som gör det möjligt för människor att anpassa sig till och överleva i främmande atmosfärer. Detta är grunden för vår utforskning av nya världar och de utmaningar som följer.
+                </p>
+            </section>
+            
+            <div class="divider my-8"></div>
+
+            <!-- Teknisk Grund -->
+            <section id="tech-stack">
+                <h2 class="font-orbitron text-3xl text-white mb-4">Teknisk Grund</h2>
+                <p class="leading-relaxed mb-4">
+                    För att ge liv åt detta universum används en kombination av kraftfulla och kreativa verktyg. Hela serien och dess visuella komponenter skapas med hjälp av:
+                </p>
+                <ul class="list-disc list-inside space-y-2 text-cyan-300 mb-4">
+                    <li><span class="text-white font-semibold">Unreal Engine 5:</span> För realtidsrendering, världsbygge och att skapa de cinematiska scenerna.</li>
+                    <li><span class="text-white font-semibold">Blender:</span> För 3D-modellering av karaktärer, miljöer och rekvisita.</li>
+                    <li><span class="text-white font-semibold">Substance Painter:</span> För detaljerad texturering och materialdesign som ger en realistisk och trovärdig känsla.</li>
+                    <li><span class="text-white font-semibold">Reason Studios:</span> För att komponera stämningsfull musik och skapa den unika ljudbilden för Ombra Prime.</li>
+                    <li><span class="text-white font-semibold">AI-lösningar:</span> Används som ett komplement i den kreativa processen för att generera idéer och effektivisera arbetsflöden.</li>
+                </ul>
+            </section>
+
+            <div class="divider my-8"></div>
+
+            <!-- Ett Levande Arkiv -->
+            <section id="living-archive">
+                <h2 class="font-orbitron text-3xl text-white mb-4">Ett Levande Arkiv</h2>
+                <p class="leading-relaxed">
+                    All information om universumet – från karaktärsbiografier till tekniska specifikationer – är noggrant strukturerad och lagrad i XML-filer. Denna webbplats fungerar som ett levande, interaktivt arkiv som hämtar sin data direkt från dessa filer. Det gör projektet transparent och tillåter besökare att få en djupare inblick i den värld som skapas, precis som den existerar bakom kulisserna.
+                </p>
             </section>
 
         </main>
 
         <!-- ===== FOOTER ===== -->
-        <!-- Sidfoten längst ner på sidan. -->
-        <footer class="text-center py-8 mt-8">
+        <footer class="text-center py-8 mt-12">
             <p class="text-gray-500">
                 &copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.
             </p>
@@ -122,8 +121,8 @@
 
     </div>
 
-    <!-- Ett litet skript för att automatiskt uppdatera årtalet i footern -->
     <script>
+        // Uppdatera årtalet i footern
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 

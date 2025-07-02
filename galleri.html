@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ombra Prime - Välkommen</title>
+    <title>Ombra Prime - Galleri</title>
 
     <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,50 +15,117 @@
 
     <!-- Anpassad CSS för att finjustera designen och lägga till teman -->
     <style>
-        /* Här definierar vi de typsnitt vi laddade ner från Google Fonts */
-        .font-orbitron {
-            font-family: 'Orbitron', sans-serif;
-        }
-        .font-rajdhani {
-            font-family: 'Rajdhani', sans-serif;
-        }
-
-        /* Enkel glöd-effekt för text, passar sci-fi-temat */
-        .text-glow {
-            text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3);
-        }
-
-        /* Anpassad bakgrundsfärg */
-        body {
-            background-color: #050810; /* En mycket mörk blå, nästan svart */
-        }
-
-        /* Stil för navigeringsknapparna */
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+        .text-glow { text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3); }
+        body { background-color: #050810; }
         .nav-button {
-            background-color: rgba(0, 191, 255, 0.1); /* Genomskinlig blå */
+            background-color: rgba(0, 191, 255, 0.1);
             border: 1px solid rgba(0, 191, 255, 0.4);
-            transition: all 0.3s ease; /* Mjuk övergång för hover-effekten */
+            transition: all 0.3s ease;
         }
         .nav-button:hover {
             background-color: rgba(0, 191, 255, 0.3);
             border-color: rgba(0, 191, 255, 0.8);
-            transform: translateY(-2px); /* Liten lyft-effekt */
+            transform: translateY(-2px);
         }
-        
-        /* En subtil linje för att separera sektioner */
         .divider {
             height: 1px;
             background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
+        }
+        /* Stil för galleriet */
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none; /* Gör så att man kan klicka "igenom" overlayen */
+        }
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+        .gallery-item.video .overlay {
+            opacity: 1; /* Visa alltid overlay för video */
+        }
+        /* Stil för lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            animation: fadeIn 0.5s;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        .lightbox-content img, .lightbox-content video {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 0.5rem;
+        }
+        .close-lightbox {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+        /* Filterknappar */
+        .filter-button {
+            background-color: rgba(0, 191, 255, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+        }
+        .filter-button.active {
+            background-color: rgba(0, 191, 255, 0.4);
+            border-color: rgba(0, 191, 255, 0.8);
         }
     </style>
 </head>
 <body class="font-rajdhani text-gray-300">
 
     <!-- Huvudbehållare som centrerar allt innehåll -->
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
 
         <!-- ===== HEADER-SEKTION ===== -->
-        <!-- Här ligger huvudtiteln för sidan. -->
         <header class="text-center py-12">
             <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">
                 OMBRA PRIME
@@ -69,52 +136,59 @@
         </header>
 
         <!-- ===== NAVIGERING ===== -->
-        <!-- Det här är huvudmenyn. Byt ut '#' mot filnamnet för dina nya sidor, t.ex. "galleri.html". -->
         <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
             <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Hem</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
+            <a href="galleri.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
+            <a href="karaktarer.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
+            <a href="teknologi.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
+            <a href="om-projektet.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
         </nav>
 
         <!-- ===== HUVUDINNEHÅLL ===== -->
-        <!-- Det är här du skriver det mesta av din text och lägger in bilder. -->
-        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700">
+        <main>
+            <h2 class="font-orbitron text-4xl text-white text-center mb-6">Galleri</h2>
             
-            <!-- Välkomstsektion -->
-            <section id="welcome">
-                <h2 class="font-orbitron text-3xl text-white mb-4">Välkommen till moderskeppet</h2>
-                <p class="text-lg leading-relaxed mb-4">
-                    Detta är ett levande arkiv och en utforskning av universumet Ombra Prime. Här dokumenteras mänsklighetens första steg ut i den stora rymden, möjliggjort av den revolutionerande teknologin "The Breather". Följ med på resan ombord på det gigantiska moderskeppet som är vårt hem och vår framtid.
-                </p>
-                <p class="leading-relaxed">
-                    Projektet är skapat med verktyg som Unreal Engine, Blender och Substance Painter för att visuellt utforska de stora livsfrågor som uppstår när människan tar klivet ut i det okända.
-                </p>
-            </section>
+            <!-- Filterknappar -->
+            <div id="filter-container" class="flex justify-center gap-4 mb-10">
+                <button class="filter-button active text-white font-semibold py-2 px-5 rounded-lg transition-colors duration-300" data-filter="allt">Allt</button>
+                <button class="filter-button text-white font-semibold py-2 px-5 rounded-lg transition-colors duration-300" data-filter="bild">Bilder</button>
+                <button class="filter-button text-white font-semibold py-2 px-5 rounded-lg transition-colors duration-300" data-filter="film">Filmer</button>
+            </div>
 
-            <div class="divider my-8"></div>
-
-            <!-- Exempelsektion för att visa hur du lägger till mer innehåll -->
-            <section id="the-breather">
-                <h3 class="font-orbitron text-2xl text-white mb-4">Teknologin: The Breather</h3>
-                <div class="md:flex md:gap-6 items-center">
-                    <!-- Byt ut placeholder-bilden mot en egen bild. Lägg den i en "images"-mapp och ändra src-länken. -->
-                    <img src="https://placehold.co/600x400/050810/00bfff?text=The+Breather" 
-                         alt="Konceptbild av The Breather-teknologin" 
-                         class="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 border-2 border-gray-700">
-                    <p class="leading-relaxed md:w-2/3">
-                        <!-- Här kan du skriva mer om The Breather. -->
-                        "The Breather" är mer än bara en maskin; det är en symbiotisk teknologi som gör det möjligt för människor att överleva och anpassa sig till främmande atmosfärer. Den analyserar och omvandlar omgivningen på molekylär nivå, vilket är grunden för vår interstellära kolonisation. Här kommer vi att utforska dess funktion, ursprung och de etiska dilemman den medför.
-                    </p>
+            <!-- Galleriruta -->
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                
+                <!-- Exempel på bild. Byt ut src mot din egen bildfil. -->
+                <div class="gallery-item" data-category="bild" data-src="https://placehold.co/800x600/0a0e1a/00bfff?text=Rymdskepp">
+                    <img src="https://placehold.co/400x300/0a0e1a/00bfff?text=Rymdskepp" alt="Konceptbild på ett rymdskepp">
                 </div>
-            </section>
+                
+                <!-- Exempel på film. Byt ut data-src mot din videofil. -->
+                <div class="gallery-item video" data-category="film" data-src="https://videos.pexels.com/video-files/3214444/3214444-sd_640_360_30fps.mp4">
+                    <img src="https://placehold.co/400x300/0a0e1a/00bfff?text=Kort+Klipp" alt="Miniatyrbild för filmklipp">
+                    <div class="overlay">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-play-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"/>
+                        </svg>
+                    </div>
+                </div>
 
+                <div class="gallery-item" data-category="bild" data-src="https://placehold.co/800x600/0a0e1a/00bfff?text=Planetvy">
+                    <img src="https://placehold.co/400x300/0a0e1a/00bfff?text=Planetvy" alt="Vy över en främmande planet">
+                </div>
+                <div class="gallery-item" data-category="bild" data-src="https://placehold.co/800x600/0a0e1a/00bfff?text=Karaktär">
+                    <img src="https://placehold.co/400x300/0a0e1a/00bfff?text=Karaktär" alt="Närbild på en karaktär">
+                </div>
+                <div class="gallery-item" data-category="bild" data-src="https://placehold.co/800x600/0a0e1a/00bfff?text=Interiör">
+                    <img src="https://placehold.co/400x300/0a0e1a/00bfff?text=Interiör" alt="Interiör från moderskeppet">
+                </div>
+                
+            </div>
         </main>
 
         <!-- ===== FOOTER ===== -->
-        <!-- Sidfoten längst ner på sidan. -->
-        <footer class="text-center py-8 mt-8">
+        <footer class="text-center py-8 mt-12">
             <p class="text-gray-500">
                 &copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.
             </p>
@@ -122,10 +196,73 @@
 
     </div>
 
-    <!-- Ett litet skript för att automatiskt uppdatera årtalet i footern -->
+    <!-- Lightbox-behållare -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <div id="lightbox-content" class="lightbox-content"></div>
+    </div>
+
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryGrid = document.getElementById('gallery-grid');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxContent = document.getElementById('lightbox-content');
+            const closeLightbox = document.querySelector('.close-lightbox');
+            const filterContainer = document.getElementById('filter-container');
+
+            // Händelselyssnare för galleriobjekt
+            galleryGrid.addEventListener('click', (e) => {
+                const item = e.target.closest('.gallery-item');
+                if (item) {
+                    const src = item.dataset.src;
+                    const category = item.dataset.category;
+
+                    if (category === 'bild') {
+                        lightboxContent.innerHTML = `<img src="${src}" alt="Förstorad bild">`;
+                    } else if (category === 'film') {
+                        lightboxContent.innerHTML = `<video src="${src}" controls autoplay></video>`;
+                    }
+                    
+                    lightbox.style.display = 'flex';
+                }
+            });
+
+            // Stäng lightbox
+            closeLightbox.addEventListener('click', () => {
+                lightbox.style.display = 'none';
+                lightboxContent.innerHTML = ''; // Rensa innehållet för att stoppa videon
+            });
+            
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                     lightbox.style.display = 'none';
+                     lightboxContent.innerHTML = '';
+                }
+            });
+
+            // Filterlogik
+            filterContainer.addEventListener('click', (e) => {
+                if (e.target.matches('button.filter-button')) {
+                    // Hantera aktiv knapp
+                    filterContainer.querySelector('.active').classList.remove('active');
+                    e.target.classList.add('active');
+
+                    const filter = e.target.dataset.filter;
+                    const items = galleryGrid.querySelectorAll('.gallery-item');
+
+                    items.forEach(item => {
+                        if (filter === 'allt' || item.dataset.category === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+
+        // Uppdatera årtalet i footern
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-
 </body>
 </html>

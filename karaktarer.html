@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ombra Prime - Välkommen</title>
+    <title>Ombra Prime - Karaktärer</title>
 
     <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,50 +15,82 @@
 
     <!-- Anpassad CSS för att finjustera designen och lägga till teman -->
     <style>
-        /* Här definierar vi de typsnitt vi laddade ner från Google Fonts */
-        .font-orbitron {
-            font-family: 'Orbitron', sans-serif;
-        }
-        .font-rajdhani {
-            font-family: 'Rajdhani', sans-serif;
-        }
-
-        /* Enkel glöd-effekt för text, passar sci-fi-temat */
-        .text-glow {
-            text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3);
-        }
-
-        /* Anpassad bakgrundsfärg */
-        body {
-            background-color: #050810; /* En mycket mörk blå, nästan svart */
-        }
-
-        /* Stil för navigeringsknapparna */
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+        .text-glow { text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3); }
+        body { background-color: #050810; }
         .nav-button {
-            background-color: rgba(0, 191, 255, 0.1); /* Genomskinlig blå */
+            background-color: rgba(0, 191, 255, 0.1);
             border: 1px solid rgba(0, 191, 255, 0.4);
-            transition: all 0.3s ease; /* Mjuk övergång för hover-effekten */
+            transition: all 0.3s ease;
         }
         .nav-button:hover {
             background-color: rgba(0, 191, 255, 0.3);
             border-color: rgba(0, 191, 255, 0.8);
-            transform: translateY(-2px); /* Liten lyft-effekt */
+            transform: translateY(-2px);
         }
-        
-        /* En subtil linje för att separera sektioner */
         .divider {
             height: 1px;
             background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
         }
+        /* Stil för karaktärskorten */
+        .character-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .character-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.4), 0 0 20px rgba(0, 191, 255, 0.2);
+        }
+        /* Stil för modal-fönstret */
+        .modal {
+            display: none; /* Dold som standard */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.7);
+            animation: fadeIn 0.5s;
+        }
+        .modal-content {
+            background-color: #0a0e1a;
+            margin: 5% auto;
+            padding: 2rem;
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            border-radius: 0.75rem;
+            width: 90%;
+            max-width: 700px;
+            color: #d1d5db;
+            animation: slideIn 0.5s;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: #00bfff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+        @keyframes slideIn { from {transform: translateY(-50px);} to {transform: translateY(0);} }
     </style>
 </head>
 <body class="font-rajdhani text-gray-300">
 
     <!-- Huvudbehållare som centrerar allt innehåll -->
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
 
         <!-- ===== HEADER-SEKTION ===== -->
-        <!-- Här ligger huvudtiteln för sidan. -->
         <header class="text-center py-12">
             <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">
                 OMBRA PRIME
@@ -69,52 +101,24 @@
         </header>
 
         <!-- ===== NAVIGERING ===== -->
-        <!-- Det här är huvudmenyn. Byt ut '#' mot filnamnet för dina nya sidor, t.ex. "galleri.html". -->
         <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
             <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Hem</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
+            <a href="galleri.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
+            <a href="karaktarer.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
+            <a href="teknologi.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
+            <a href="om-projektet.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
         </nav>
 
-        <!-- ===== HUVUDINNEHÅLL ===== -->
-        <!-- Det är här du skriver det mesta av din text och lägger in bilder. -->
-        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700">
-            
-            <!-- Välkomstsektion -->
-            <section id="welcome">
-                <h2 class="font-orbitron text-3xl text-white mb-4">Välkommen till moderskeppet</h2>
-                <p class="text-lg leading-relaxed mb-4">
-                    Detta är ett levande arkiv och en utforskning av universumet Ombra Prime. Här dokumenteras mänsklighetens första steg ut i den stora rymden, möjliggjort av den revolutionerande teknologin "The Breather". Följ med på resan ombord på det gigantiska moderskeppet som är vårt hem och vår framtid.
-                </p>
-                <p class="leading-relaxed">
-                    Projektet är skapat med verktyg som Unreal Engine, Blender och Substance Painter för att visuellt utforska de stora livsfrågor som uppstår när människan tar klivet ut i det okända.
-                </p>
-            </section>
-
-            <div class="divider my-8"></div>
-
-            <!-- Exempelsektion för att visa hur du lägger till mer innehåll -->
-            <section id="the-breather">
-                <h3 class="font-orbitron text-2xl text-white mb-4">Teknologin: The Breather</h3>
-                <div class="md:flex md:gap-6 items-center">
-                    <!-- Byt ut placeholder-bilden mot en egen bild. Lägg den i en "images"-mapp och ändra src-länken. -->
-                    <img src="https://placehold.co/600x400/050810/00bfff?text=The+Breather" 
-                         alt="Konceptbild av The Breather-teknologin" 
-                         class="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 border-2 border-gray-700">
-                    <p class="leading-relaxed md:w-2/3">
-                        <!-- Här kan du skriva mer om The Breather. -->
-                        "The Breather" är mer än bara en maskin; det är en symbiotisk teknologi som gör det möjligt för människor att överleva och anpassa sig till främmande atmosfärer. Den analyserar och omvandlar omgivningen på molekylär nivå, vilket är grunden för vår interstellära kolonisation. Här kommer vi att utforska dess funktion, ursprung och de etiska dilemman den medför.
-                    </p>
-                </div>
-            </section>
-
+        <!-- ===== KARAKTÄRSGALLERI ===== -->
+        <main>
+            <h2 class="font-orbitron text-4xl text-white text-center mb-10">Besättning & Personligheter</h2>
+            <div id="character-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Karaktärskort kommer att infogas här av JavaScript -->
+            </div>
         </main>
 
         <!-- ===== FOOTER ===== -->
-        <!-- Sidfoten längst ner på sidan. -->
-        <footer class="text-center py-8 mt-8">
+        <footer class="text-center py-8 mt-12">
             <p class="text-gray-500">
                 &copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.
             </p>
@@ -122,10 +126,227 @@
 
     </div>
 
-    <!-- Ett litet skript för att automatiskt uppdatera årtalet i footern -->
+    <!-- ===== MODAL FÖR KARAKTÄRSINFORMATION ===== -->
+    <div id="characterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="modal-body">
+                <!-- Karaktärsinformation kommer att infogas här -->
+            </div>
+        </div>
+    </div>
+
     <script>
+        // XML-data inbäddad direkt i skriptet.
+        const xmlString = `
+<Characters>
+  <Character id="1">
+    <Name>Alexander Atreus</Name>
+    <Aliases><Alias>Lex</Alias></Aliases>
+    <Title>Commander</Title>
+    <Description>För Commander Alexander Atreus är skeppet mer än bara en befattning – det är hans hem, hans ansvar och, kanske, hans största prövning.</Description>
+    <Background><Age>38</Age><Birthday>2962-09-21</Birthday><Zodiac>Virgo</Zodiac><Origin>Född på Tellus (Jorden)</Origin><SocialStatus>Högsta befäl på Ombra Prime, respekterad inom rymdflottan</SocialStatus><History><Event>Växte upp i en strikt militärfamilj där disciplin och plikt var en del av vardagen.</Event><Event>Antogs till en av de mest prestigefyllda rymdflottans akademier vid 16 års ålder.</Event><Event>Snabb karriär inom rymdflottan tack vare strategiskt sinne och ledaregenskaper.</Event></History></Background>
+    <Appearance><Description>Alexander är en ståtlig man med ett allvarligt och fokuserat utseende. Han har kort, mörkt hår och genomträngande ögon. Hans hållning är rak och självsäker.</Description></Appearance>
+    <Personality><Traits><Trait>Analytisk</Trait><Trait>Plikttrogen</Trait><Trait>Beslutsam</Trait><Trait>Lojal</Trait><Trait>Behärskad</Trait></Traits></Personality>
+  </Character>
+  <Character id="2">
+    <Name>Dr. Evelyn Saros</Name>
+    <Aliases><Alias>Eve</Alias></Aliases>
+    <Title>Bioforskare</Title>
+    <Description>Dr. Evelyn Saros är en briljant bioforskare ombord på *Ombra Prime*, driven av en fascination för hur liv kan anpassa sig till extrema miljöer.</Description>
+    <Background><Age>34</Age><Birthday>2966-03-09</Birthday><Zodiac>Pisces</Zodiac><Origin>Uppvuxen i en forskarfamilj på Mars</Origin></Background>
+    <Appearance><Description>Evelyn har ett intelligent och varmt utseende. Hon har långt, vågigt hår och vänliga ögon som ofta utstrålar nyfikenhet och empati.</Description></Appearance>
+    <Personality><Traits><Trait>Nyfiken</Trait><Trait>Intelligent</Trait><Trait>Passionerad</Trait><Trait>Empatisk</Trait><Trait>Ibland impulsiv</Trait></Traits></Personality>
+  </Character>
+  <Character id="3">
+    <Name>Narsingha Woodheim</Name>
+    <Aliases><Alias>Den Galna Shamanen</Alias></Aliases>
+    <Title>Shaman och Förståare av The Loom</Title>
+    <Description>Narsingha Woodheim är en excentrisk och oförutsägbar karaktär, känd som "Den Galna Shamanen". Han blandar djup visdom med bisarra vanor och ett oberäkneligt beteende.</Description>
+    <Appearance><Description>Narsingha Woodheim är en slående gestalt med dreadlocks som når ner till knävecken. Hans blick är vass och genomträngande.</Description></Appearance>
+    <Personality><Traits><Trait>Vis</Trait><Trait>Excentrisk</Trait><Trait>Oförutsägbar</Trait><Trait>Mystisk</Trait><Trait>Insiktsfull</Trait></Traits></Personality>
+  </Character>
+  <Character id="4">
+    <Name>Stifur Mandrattur</Name>
+    <Aliases><Alias>Stif</Alias><Alias>Mandrat</Alias></Aliases>
+    <Title>Högsta Offiser för Försvaret</Title>
+    <Description>Stifur Mandrattur är en klippa av styrka och beslutsamhet, en man som Alexander Atreus litar på med sitt liv.</Description>
+    <Appearance><Description>Stifur är en imponerande man med en kraftig kroppsbyggnad. Hans ansikte är markerat av ärr från otaliga strider.</Description></Appearance>
+    <Personality><Traits><Trait>Lojal</Trait><Trait>Modig</Trait><Trait>Beskyddande</Trait><Trait>Rättfram</Trait><Trait>Handlingskraftig</Trait></Traits></Personality>
+  </Character>
+  <Character id="5">
+    <Name>Dr. Silas Vane</Name>
+    <Aliases><Alias>The Gene Weaver</Alias></Aliases>
+    <Title>Lead Geneticist</Title>
+    <Description>Dr. Silas Vane är en gåtfull och tillbakadragen vetenskapsman, djupt försjunken i sin forskning om genmanipulation.</Description>
+    <Appearance><Description>Vane har ett blekt och nästan genomskinligt utseende, med mörka ringar under ögonen som vittnar om sömnlösa nätter i labbet.</Description></Appearance>
+    <Personality><Traits><Trait>Tillbakadragen</Trait><Trait>Asocial</Trait><Trait>Besatt</Trait><Trait>Intelligent</Trait><Trait>Manipulativ</Trait></Traits></Personality>
+  </Character>
+  <Character id="6">
+    <Name>Jay Vega</Name>
+    <Title>Pilot och Scout</Title>
+    <Description>Jay Vega är en mystisk och tystlåten pilot med enastående observationsförmåga. Hon är en ensamvarg som trivs i sitt eget sällskap.</Description>
+    <Appearance><Description>Jay har ett smalt och atletiskt utseende. Hon har mörkt, kortklippt hår och genomträngande ögon.</Description></Appearance>
+    <Personality><Traits><Trait>Mystisk</Trait><Trait>Tystlåten</Trait><Trait>Iakttagande</Trait><Trait>Analytisk</Trait><Trait>Självständig</Trait></Traits></Personality>
+  </Character>
+  <Character id="7">
+    <Name>Jax Vega</Name>
+    <Title>Scrapper och Tekniskt geni</Title>
+    <Description>Jax Vega är Jays bror och en mästare på att skapa och modifiera teknologi av återvunnet material.</Description>
+    <Appearance><Description>Jax har ett energiskt och rörligt utseende. Han har kort, stökigt hår och fläckiga händer från sitt arbete.</Description></Appearance>
+    <Personality><Traits><Trait>Nyskapande</Trait><Trait>Uppfinningsrik</Trait><Trait>Självständig</Trait><Trait>Frihetsälskande</Trait><Trait>Lojal</Trait></Traits></Personality>
+  </Character>
+  <Character id="8">
+    <Name>Mr. Splendid</Name>
+    <Title>Ägare av Ombra Prime</Title>
+    <Description>Mr. Splendid är en excentrisk miljardär och konstälskare som äger Ombra Prime. Han är känd för sin humor och sin extravaganta livsstil.</Description>
+    <Appearance><Description>Mr. Splendid har en färgstark och iögonfallande stil. Han klär sig ofta i extravaganta kläder och bär ovanliga accessoarer.</Description></Appearance>
+    <Personality><Traits><Trait>Humoristisk</Trait><Trait>Extrovert</Trait><Trait>Kreativ</Trait><Trait>Nyfiken</Trait><Trait>Slarvig</Trait></Traits></Personality>
+  </Character>
+  <Character id="9">
+    <Name>Snore</Name>
+    <Aliases><Alias>Punkroboten</Alias></Aliases>
+    <Title>Mr. Splendids Följeslagare</Title>
+    <Description>Snore är en punkrobot, skapad av Mr. Splendid som ett misslyckat försök till den perfekta följeslagaren. Han är anti-auktoritär och älskad för sin unika personlighet.</Description>
+    <Appearance><Description>En mellanstor humanoid robot med en punkig och unik design. Han har bucklor, fläckar av färg, och en mohikanfrisyr av färgglada kablar.</Description></Appearance>
+    <Personality><Traits><Trait>Rebellisk</Trait><Trait>Anti-auktoritär</Trait><Trait>Självständig</Trait><Trait>Humoristisk</Trait><Trait>Lojal</Trait></Traits></Personality>
+  </Character>
+  <Character id="10">
+    <Name>Steffo Stitch</Name>
+    <Aliases><Alias>Stitch</Alias></Aliases>
+    <Title>Före detta Smugglare</Title>
+    <Description>Steffo Stitch är en gåtfull och erfaren före detta brottsling som har levt ett liv fyllt av äventyr och risker.</Description>
+    <Appearance><Description>Steffo Stitch har ett härdat utseende som speglar hans äventyrliga livsstil. Han har ärr och tatueringar som berättar historier om hans förflutna.</Description></Appearance>
+    <Personality><Traits><Trait>Självständig</Trait><Trait>Äventyrlig</Trait><Trait>Lojal</Trait><Trait>Gåtfull</Trait><Trait>Erfaren</Trait></Traits></Personality>
+  </Character>
+  <Character id="11">
+    <Name>Elio</Name>
+    <Title>Sub-Orb Kommunikatör</Title>
+    <Description>En ung pojke med en mystisk förmåga att kommunicera med och påverka Sub-Orbs. Han har tagits om hand av Dr. Silas Vane.</Description>
+    <Appearance><Description>Jag är en liten pojke med stora, nyfikna ögon och ett uttryck som växlar mellan oskuldsfull förundran och djup koncentration.</Description></Appearance>
+    <Personality><Traits><Trait>Nyfiken</Trait><Trait>Oskuldsfull</Trait><Trait>Tillitsfull</Trait><Trait>Intuitiv</Trait><Trait>Känslig</Trait></Traits></Personality>
+  </Character>
+  <Character id="12">
+    <Name>Caspian Thorne</Name>
+    <Aliases><Alias>Alkemisten</Alias><Alias>Ormen</Alias></Aliases>
+    <Title>Konsulterande Alkemist</Title>
+    <Description>Caspian Thorne är en briljant men plågad kemist, besatt av att låsa upp alkemins uråldriga koder. Hans förflutna som drogdesigner har satt djupa spår.</Description>
+    <Appearance><Description>Caspian Thorne har ett intensivt och intelligent utseende, men hans fysiska form bär spår av år av missbruk och sömnlösa nätter.</Description></Appearance>
+    <Personality><Traits><Trait>Briljant</Trait><Trait>Besatt</Trait><Trait>Hemlighetsfull</Trait><Trait>Plågad</Trait><Trait>Beroendepersonlighet</Trait></Traits></Personality>
+  </Character>
+</Characters>
+        `;
+
+        // Funktion för att hämta ett värde från ett XML-element.
+        function getElementValue(xmlElement, tagName) {
+            // FIX: Hanterar fall där xmlElement inte existerar för att förhindra fel.
+            if (!xmlElement) {
+                return 'N/A';
+            }
+            const element = xmlElement.getElementsByTagName(tagName)[0];
+            return element ? element.textContent : 'N/A';
+        }
+
+        // Funktion för att hämta en lista med värden från XML-element.
+        function getElementList(xmlElement, listName, itemName) {
+            // FIX: Hanterar fall där xmlElement inte existerar för att förhindra fel.
+            if (!xmlElement) {
+                return ''; // Returnerar en tom sträng för att undvika att HTML-strukturen bryts.
+            }
+            const list = xmlElement.getElementsByTagName(listName)[0];
+            if (!list) return '';
+            return Array.from(list.getElementsByTagName(itemName)).map(item => `<li>${item.textContent}</li>`).join('');
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlString, "application/xml");
+            const characters = xmlDoc.getElementsByTagName("Character");
+            const grid = document.getElementById('character-grid');
+            const modal = document.getElementById('characterModal');
+            const modalBody = document.getElementById('modal-body');
+            const closeButton = document.querySelector('.close-button');
+
+            // Skapa ett kort för varje karaktär
+            Array.from(characters).forEach(char => {
+                const id = char.getAttribute('id');
+                const name = getElementValue(char, 'Name');
+                const title = getElementValue(char, 'Title');
+                const card = document.createElement('div');
+                card.className = 'character-card bg-gray-900 bg-opacity-60 p-4 rounded-lg border border-gray-700 text-center';
+                card.dataset.id = id;
+                
+                card.innerHTML = `
+                    <img src="https://placehold.co/300x300/050810/00bfff?text=${name.replace(/\s+/g, '+')}" 
+                         alt="Bild på ${name}" 
+                         class="w-full h-48 object-cover rounded-md mb-4 mx-auto">
+                    <h3 class="font-orbitron text-xl text-white">${name}</h3>
+                    <p class="text-cyan-400 text-sm">${title}</p>
+                `;
+                grid.appendChild(card);
+
+                // Lägg till klickhändelse för att öppna modalen
+                card.addEventListener('click', () => showModal(id));
+            });
+
+            // Funktion för att visa modalen med karaktärsinfo
+            function showModal(id) {
+                const character = xmlDoc.querySelector(`Character[id="${id}"]`);
+                if (!character) return;
+
+                // Hämta all information från XML
+                const name = getElementValue(character, 'Name');
+                const title = getElementValue(character, 'Title');
+                const description = getElementValue(character, 'Description');
+                const appearance = getElementValue(character.getElementsByTagName('Appearance')[0], 'Description');
+                const aliases = getElementList(character, 'Aliases', 'Alias');
+                const traits = getElementList(character.getElementsByTagName('Personality')[0], 'Traits', 'Trait');
+                const age = getElementValue(character.getElementsByTagName('Background')[0], 'Age');
+                const origin = getElementValue(character.getElementsByTagName('Background')[0], 'Origin');
+                const socialStatus = getElementValue(character.getElementsByTagName('Background')[0], 'SocialStatus');
+                const history = getElementList(character.getElementsByTagName('Background')[0], 'History', 'Event');
+
+                // Bygg HTML-innehållet för modalen
+                modalBody.innerHTML = `
+                    <h2 class="font-orbitron text-3xl text-white text-glow mb-2">${name}</h2>
+                    <p class="text-cyan-300 text-lg mb-4">${title}</p>
+                    ${aliases.length > 0 ? `<p class="mb-4 text-sm text-gray-400">Alias: ${aliases.replace(/<li>/g, '').replace(/<\/li>/g, ', ').slice(0, -2)}</p>` : ''}
+                    
+                    <div class="divider my-4"></div>
+                    
+                    <p class="text-lg leading-relaxed mb-6">${description}</p>
+                    
+                    <h3 class="font-orbitron text-xl text-white mb-2">Bakgrund</h3>
+                    <ul class="list-disc list-inside mb-4 space-y-1">
+                        <li><strong>Ålder:</strong> ${age}</li>
+                        <li><strong>Ursprung:</strong> ${origin}</li>
+                        <li><strong>Social Status:</strong> ${socialStatus}</li>
+                    </ul>
+                    
+                    <h4 class="font-orbitron text-lg text-white mb-2">Historia</h4>
+                    <ul class="list-disc list-inside mb-6 space-y-1">${history}</ul>
+
+                    <h3 class="font-orbitron text-xl text-white mb-2">Utseende</h3>
+                    <p class="leading-relaxed mb-6">${appearance}</p>
+                    
+                    <h3 class="font-orbitron text-xl text-white mb-2">Personlighetsdrag</h3>
+                    <ul class="list-disc list-inside mb-4 space-y-1">${traits}</ul>
+                `;
+                
+                modal.style.display = "block";
+            }
+
+            // Stäng modalen
+            closeButton.onclick = () => modal.style.display = "none";
+            window.onclick = (event) => {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            };
+        });
+
+        // Uppdatera årtalet i footern
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-
 </body>
 </html>
