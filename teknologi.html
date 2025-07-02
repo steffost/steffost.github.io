@@ -5,52 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ombra Prime - Teknologi</title>
 
-    <!-- Länkar in Tailwind CSS och Google Fonts -->
+    <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Länkar in Google Fonts för ett passande typsnitt -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Anpassad CSS för att matcha temat -->
+
+    <!-- Anpassad CSS för att finjustera designen och lägga till teman -->
     <style>
-        body {
-            font-family: 'Rajdhani', sans-serif;
-            background-color: #050810;
-            color: #e2e8f0;
-        }
-
-        .font-orbitron {
-            font-family: 'Orbitron', sans-serif;
-        }
-        
-        .text-glow {
-            text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3);
-        }
-
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+        .text-glow { text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3); }
+        body { background-color: #050810; }
         .nav-button {
             background-color: rgba(0, 191, 255, 0.1);
             border: 1px solid rgba(0, 191, 255, 0.4);
             transition: all 0.3s ease;
-            text-align: center;
         }
         .nav-button:hover {
             background-color: rgba(0, 191, 255, 0.3);
             border-color: rgba(0, 191, 255, 0.8);
-            transform: translateY(-2px) scale(1.02);
+            transform: translateY(-2px);
         }
-        
         .divider {
             height: 1px;
             background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
         }
+        .tech-card {
+            background-color: rgba(10, 14, 26, 0.7);
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            transition: border-color 0.3s ease;
+        }
+        .tech-card:hover {
+            border-color: rgba(0, 191, 255, 0.6);
+        }
     </style>
 </head>
-<body>
+<body class="font-rajdhani text-gray-300">
 
-    <!-- Huvudbehållare som centrerar allt -->
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        
-        <!-- ===== HEADER-SEKTION (Konsekvent på alla sidor) ===== -->
+    <!-- Huvudbehållare som centrerar allt innehåll -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+
+        <!-- ===== HEADER-SEKTION ===== -->
         <header class="text-center py-12">
             <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">
                 OMBRA PRIME
@@ -60,47 +58,53 @@
             </p>
         </header>
 
-        <!-- ===== HUVUDNAVIGERING (Konsekvent på alla sidor) ===== -->
+        <!-- ===== NAVIGERING ===== -->
         <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
             <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Hem</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
+            <a href="galleri.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
+            <a href="karaktarer.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
             <a href="teknologi.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
-            <a href="#" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
+            <a href="om-projektet.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
         </nav>
 
-        <!-- ===== HUVUDINNEHÅLL (Den nya menyn) ===== -->
-        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700">
+        <!-- ===== HUVUDINNEHÅLL ===== -->
+        <main>
+            <h2 class="font-orbitron text-4xl text-white text-center mb-10">Kärnteknologier</h2>
             
-            <section id="tech-menu">
-                <h2 class="font-orbitron text-3xl text-white mb-2 text-center">Teknologiskt Arkiv</h2>
-                <p class="text-center text-gray-400 mb-8">Välj en teknologi från arkivet för att se detaljerad information.</p>
+            <div class="space-y-10">
                 
-                <div class="divider my-6"></div>
+                <!-- The Breather -->
+                <section id="breather" class="tech-card p-6 rounded-lg">
+                    <h3 class="font-orbitron text-3xl text-white mb-3">The Breather</h3>
+                    <p class="leading-relaxed mb-4">
+                        Grunden för mänsklighetens interstellära expansion. "The Breather" är en revolutionerande och komplex teknologi som analyserar och omvandlar främmande atmosfärer på molekylär nivå. Detta gör det möjligt för människor att överleva på planeter som annars skulle vara dödliga, och är en central del av Ombra Primes uppdrag.
+                    </p>
+                    <a href="teknologi-breather.html" class="nav-button inline-block text-white font-semibold py-2 px-5 rounded-lg">Läs mer &rarr;</a>
+                </section>
 
-                <!-- Menybehållare -->
-                <div class="flex flex-col items-center gap-6 max-w-md mx-auto">
-                    
-                    <!-- Knapp för Antigravitationsmodul -->
-                    <a href="antigrav-modul.html" class="nav-button text-white font-semibold py-4 px-6 rounded-lg w-full text-xl">
-                        Antigravitationsmodul
-                    </a>
+                <!-- Antigravitationsmodul -->
+                <section id="antigrav" class="tech-card p-6 rounded-lg">
+                    <h3 class="font-orbitron text-3xl text-white mb-3">Antigravitationsmodul</h3>
+                    <p class="leading-relaxed mb-4">
+                        Dessa moduler är avgörande för Ombra Primes funktion och förflyttning av personal och material. Genom att manipulera lokala gravitationsfält kan modulerna skapa zoner av tyngdlöshet eller artificiell gravitation, vilket är essentiellt för allt från lastning av skyttlar till att skapa stabila livsmiljöer ombord på skeppet.
+                    </p>
+                    <a href="antigrav-modul.html" class="nav-button inline-block text-white font-semibold py-2 px-5 rounded-lg">Läs mer &rarr;</a>
+                </section>
 
-                    <!-- Platzhållare för framtida knappar -->
-                    <a href="#" class="nav-button text-gray-600 font-semibold py-4 px-6 rounded-lg w-full text-xl cursor-not-allowed border-gray-700">
-                        The Breather (Kommer snart)
-                    </a>
-                    <a href="#" class="nav-button text-gray-600 font-semibold py-4 px-6 rounded-lg w-full text-xl cursor-not-allowed border-gray-700">
-                        Stasiskammare (Kommer snart)
-                    </a>
+                <!-- Nexus Symbioticus -->
+                <section id="nexus" class="tech-card p-6 rounded-lg">
+                    <h3 class="font-orbitron text-3xl text-white mb-3">Nexus Symbioticus</h3>
+                    <p class="leading-relaxed mb-4">
+                        En banbrytande bioteknologi som integrerar ett organiskt nätverk med skeppets centrala datorsystem. Nexus Symbioticus möjliggör en nästan ögonblicklig och intuitiv dataöverföring mellan människa och maskin, vilket ger besättningen en oöverträffad kontroll och överblick över skeppets alla funktioner. Teknologin är dock inte utan sina kontroverser och risker.
+                    </p>
+                    <a href="teknologi-nexus.html" class="nav-button inline-block text-white font-semibold py-2 px-5 rounded-lg">Läs mer &rarr;</a>
+                </section>
 
-                </div>
-            </section>
-
+            </div>
         </main>
 
-        <!-- ===== FOOTER (Konsekvent på alla sidor) ===== -->
-        <footer class="text-center py-8 mt-8">
+        <!-- ===== FOOTER ===== -->
+        <footer class="text-center py-8 mt-12">
             <p class="text-gray-500">
                 &copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.
             </p>
@@ -109,6 +113,7 @@
     </div>
 
     <script>
+        // Uppdatera årtalet i footern
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 
