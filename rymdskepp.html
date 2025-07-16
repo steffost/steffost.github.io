@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ombra Prime - Rymdskepp</title>
+    <title>Ombra Prime - Flottan</title>
 
     <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -38,10 +38,24 @@
             border: 1px solid rgba(0, 191, 255, 0.2);
             transition: all 0.3s ease;
             backdrop-filter: blur(5px);
+            height: 100%; /* Säkerställer att kortet fyller länken */
         }
-        .ship-card:hover {
-            border-color: rgba(0, 191, 255, 0.6);
+        
+        /* Länk-wrapper för korten */
+        .card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            border-radius: 0.5rem; /* Matchar kortets rundning */
+            transition: transform 0.3s ease;
+        }
+
+        /* Hover-effekt appliceras när man hovrar över länken */
+        .card-link:hover {
             transform: scale(1.02);
+        }
+        .card-link:hover .ship-card {
+            border-color: rgba(0, 191, 255, 0.6);
         }
     </style>
 </head>
@@ -73,34 +87,87 @@
         <main>
             <h2 class="font-orbitron text-4xl text-white text-center mb-10">Mänsklighetens Flotta</h2>
             
-            <div class="space-y-12">
+            <div class="space-y-8">
 
                 <!-- Moderskeppet Ombra Prime -->
-                <section id="ombra-prime" class="ship-card p-6 md:p-8 rounded-lg">
-                    <h3 class="font-orbitron text-3xl text-cyan-200 text-glow mb-3">Moderskepp: Ombra Prime</h3>
-                    <div class="divider my-4"></div>
-                    <p class="leading-relaxed text-lg mb-4">
-                        Kronjuvelen i mänsklighetens interstellära flotta och en symbol för överlevnad och hopp. Ombra Prime är inte bara ett rymdskepp; det är en självförsörjande, resande metropol. Med en längd på över 30 kilometer huserar det miljontals människor och utgör den centrala noden för hela kolonisationsuppdraget. Skeppet bär på den livsviktiga "The Breather"-teknologin, avancerade forskningslabb, produktionsanläggningar och fungerar som en mobil rymdhamn för hela flottan av mindre, specialiserade farkoster. Dess blotta existens är ett monument över mänsklig ingenjörskonst och vilja.
-                    </p>
-                </section>
+                <a href="skepp-ombra-prime.html" class="card-link">
+                    <section class="ship-card p-6 md:p-8 rounded-lg flex flex-col">
+                        <div class="flex-grow">
+                            <h3 class="font-orbitron text-3xl text-cyan-200 text-glow mb-3">Moderskepp: Ombra Prime</h3>
+                            <div class="divider my-4"></div>
+                            <p class="leading-relaxed text-lg">
+                                Ombra Prime är det första av sin sort – ett kolossalt moderskepp utrustat med The Breather-teknologin, en banbrytande innovation som gör det möjligt att terraforma döda världar. Skeppet är både en rörlig koloni och en flygande fabrik, kapabel att blåsa liv i nya planeter genom att sprida en syntetisk atmosfär och initiera ekosystem. Ombra Prime är ett avlångt rymdskepp, över 6 kilometer långt och 2 kilometer brett, med en gigantisk glaskupol på 4 kilometer i diameter kopplad till ena sidan. Inuti kupolen finns en frodig biosfär som skapar en naturlig miljö för kolonisterna. Skeppet drivs av kraftfulla jonmotorer och försörjs med energi genom solpaneler som täcker stora delar av dess yta. Ombra Prime är konstruerat med moduler som kan bytas ut, läggas till eller tas bort under resans gång, vilket ger stor flexibilitet och anpassningsbarhet.
+                            </p>
+                        </div>
+                        <div class="text-right font-semibold text-cyan-400 mt-4">
+                            Läs mer &rarr;
+                        </div>
+                    </section>
+                </a>
                 
-                <!-- Utforskningsskepp: Volans Strix -->
-                <section id="volans-strix" class="ship-card p-6 md:p-8 rounded-lg">
-                    <h3 class="font-orbitron text-3xl text-cyan-200 text-glow mb-3">Utforskare: Volans Strix</h3>
-                    <div class="divider my-4"></div>
-                    <p class="leading-relaxed text-lg mb-4">
-                        Namngiven efter en forntida jordisk rovfågel är Volans Strix-klassen flottans ögon och öron. Dessa medelstora utforskningsskepp är designade för långdistansuppdrag i okända system. Utrustade med avancerade sensorpaket, stealth-system och laboratorier för preliminär analys av planetära förhållanden, är deras uppdrag att identifiera och kartlägga potentiella nya hem för mänskligheten. Deras besättningar består av de skarpaste vetenskapsmännen och de modigaste piloterna, som ofta är de första att se en ny värld med egna ögon.
-                    </p>
-                </section>
+                <!-- Volans Strix -->
+                <a href="skepp-volans-strix.html" class="card-link">
+                    <section class="ship-card p-6 md:p-8 rounded-lg flex flex-col">
+                        <div class="flex-grow">
+                            <h3 class="font-orbitron text-3xl text-cyan-200 text-glow mb-3">Volans Strix (Jay Vegas scout-skepp)</h3>
+                            <div class="divider my-4"></div>
+                            <p class="leading-relaxed text-lg">
+                                Ett snabbt och smidigt scout-skepp designat för att utforska okända planeter och miljöer. Utrustat med avancerad teknologi, intuitiv Nexus-styrning och Levitas Aequilibrium gravitationsmodul.
+                            </p>
+                        </div>
+                        <div class="text-right font-semibold text-cyan-400 mt-4">
+                            Läs mer &rarr;
+                        </div>
+                    </section>
+                </a>
 
-                <!-- Eskort/Patrull: Veloc Curser -->
-                <section id="veloc-curser" class="ship-card p-6 md:p-8 rounded-lg">
-                    <h3 class="font-orbitron text-3xl text-cyan-200 text-glow mb-3">Eskort: Veloc Curser</h3>
-                    <div class="divider my-4"></div>
-                    <p class="leading-relaxed text-lg mb-4">
-                        Där Ombra Prime är skölden, är Veloc Curser-klassen svärdet. Dessa snabba och extremt manövrerbara fregatter utgör flottans primära försvars- och eskortstyrka. Deras design prioriterar hastighet och eldkraft, vilket gör dem kapabla att snabbt genskjuta hot, patrullera rymden runt moderskeppet och agera som snabbinsatsstyrka vid planetära operationer. En "Curser" är kompakt, dödlig och bemannas av piloter kända för sina nerver av stål och blixtsnabba reflexer. De är de tysta väktarna som säkerställer att resan mot en ny gryning kan fortsätta utan störningar.
-                    </p>
-                </section>
+                <!-- Trygon -->
+                <a href="skepp-trygon.html" class="card-link">
+                    <section class="ship-card p-6 md:p-8 rounded-lg flex flex-col">
+                        <div class="flex-grow">
+                            <h3 class="font-orbitron text-3xl text-cyan-200 text-glow mb-3">Trygon (Steffo Stitchs skepp)</h3>
+                            <div class="divider my-4"></div>
+                            <p class="leading-relaxed text-lg">
+                                Ett extremt lättmanövrerat och snabbt skepp, speciellt modifierat för smuggling. Trots sin hastighet och smidighet har det ett förvånansvärt stort lastutrymme och en integrerad Levitas Aequilibrium gravitationsmodul.
+                            </p>
+                        </div>
+                         <div class="text-right font-semibold text-cyan-400 mt-4">
+                            Läs mer &rarr;
+                        </div>
+                    </section>
+                </a>
+
+                <!-- Aurora -->
+                <a href="skepp-aurora.html" class="card-link">
+                    <section class="ship-card p-6 md:p-8 rounded-lg flex flex-col">
+                        <div class="flex-grow">
+                            <h3 class="font-orbitron text-3xl text-cyan-200 text-glow mb-3">Aurora (AI-styrt)</h3>
+                            <div class="divider my-4"></div>
+                            <p class="leading-relaxed text-lg">
+                                Ett avancerat forskningsskepp designat för långdistansfärder och analys av rymdfenomen.
+                            </p>
+                        </div>
+                         <div class="text-right font-semibold text-cyan-400 mt-4">
+                            Läs mer &rarr;
+                        </div>
+                    </section>
+                </a>
+
+                <!-- Arcana Caelum -->
+                <a href="skepp-arcana-caelum.html" class="card-link">
+                    <section class="ship-card p-6 md:p-8 rounded-lg flex flex-col">
+                        <div class="flex-grow">
+                            <h3 class="font-orbitron text-3xl text-cyan-200 text-glow mb-3">Arcana Caelum (Oris utforskningsskepp)</h3>
+                            <div class="divider my-4"></div>
+                            <p class="leading-relaxed text-lg">
+                                Arcana Caelum är ett avancerat forskningsskepp, unikt anpassat för Oris långdistansfärder och utforskning av rymdfenomen utanför Ombra Prime. Dess AI-styrning är optimerad för Oris behov och analysförmåga, vilket gör det till ett förlängning av hennes medvetande.
+                            </p>
+                        </div>
+                         <div class="text-right font-semibold text-cyan-400 mt-4">
+                            Läs mer &rarr;
+                        </div>
+                    </section>
+                </a>
 
             </div>
         </main>

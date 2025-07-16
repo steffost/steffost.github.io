@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ombra Prime - Moderskeppet</title>
+
+    <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Länkar in Google Fonts för ett passande typsnitt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Anpassad CSS för att finjustera designen och lägga till teman -->
+    <style>
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+        .text-glow { text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3); }
+        body { background-color: #050810; }
+        .nav-button {
+            background-color: rgba(0, 191, 255, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: rgba(0, 191, 255, 0.3);
+            border-color: rgba(0, 191, 255, 0.8);
+            transform: translateY(-2px);
+        }
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
+        }
+        .content-card {
+            background-color: rgba(10, 14, 26, 0.7);
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+        .spec-item {
+            border-left: 3px solid rgba(0, 191, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="font-rajdhani text-gray-300">
+
+    <!-- Huvudbehållare som centrerar allt innehåll -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+
+        <!-- ===== HEADER-SEKTION ===== -->
+        <header class="text-center py-12">
+            <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">
+                OMBRA PRIME
+            </h1>
+            <p class="mt-4 text-lg text-cyan-300">
+                Den Främsta Skuggan
+            </p>
+        </header>
+
+        <!-- ===== NAVIGERING ===== -->
+        <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
+            <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Hem</a>
+            <a href="galleri.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
+            <a href="karaktarer.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
+            <a href="teknologi.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
+            <a href="om-projektet.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
+        </nav>
+
+        <!-- ===== HUVUDINNEHÅLL ===== -->
+        <main>
+            <!-- Tillbaka-knapp -->
+            <div class="mb-8">
+                <a href="rymdskepp.html" class="nav-button inline-block text-white font-semibold py-2 px-5 rounded-lg">&larr; Tillbaka till flottan</a>
+            </div>
+
+            <!-- Allmän Beskrivning -->
+            <section class="content-card p-6 md:p-8 rounded-lg mb-8">
+                <h2 class="font-orbitron text-4xl text-white text-glow mb-4">Moderskepp: Ombra Prime</h2>
+                <div class="divider my-4"></div>
+                <p class="leading-relaxed text-lg">
+                    Ombra Prime är det första av sin sort – ett kolossalt moderskepp utrustat med The Breather-teknologin, en banbrytande innovation som gör det möjligt att terraforma döda världar. Skeppet är både en rörlig koloni och en flygande fabrik, kapabel att blåsa liv i nya planeter genom att sprida en syntetisk atmosfär och initiera ekosystem.
+                </p>
+                <p class="leading-relaxed text-lg mt-4">
+                    Det är en självbärande stad i rymden, designad för att hysa hundratusentals kolonister, vetenskapsmän och soldater. Hela skeppet övervakas och styrs av Oris, en avancerad och moderlig AI som ansvarar för alla dess komplexa funktioner.
+                </p>
+                <!-- Knapp för Skeppsstruktur -->
+                <div class="mt-8 text-center">
+                    <a href="Ombra Prime - Ritning" class="nav-button inline-block text-white font-semibold py-3 px-6 rounded-lg text-lg">
+                        Skeppsstruktur - Tvärsnitt
+                    </a>
+                </div>
+            </section>
+
+            <!-- Tekniska Specifikationer -->
+            <section class="content-card p-6 md:p-8 rounded-lg mb-8">
+                <h3 class="font-orbitron text-3xl text-cyan-200 mb-4">Tekniska Specifikationer</h3>
+                <div class="space-y-4">
+                    <div class="spec-item pl-4">
+                        <h4 class="font-semibold text-white text-xl">Dimensioner</h4>
+                        <p>Avlång sektion: 6 km lång, 2 km bred. Sfärisk biokupol: 4 km i diameter.</p>
+                    </div>
+                    <div class="spec-item pl-4">
+                        <h4 class="font-semibold text-white text-xl">Kapacitet</h4>
+                        <p>Rymmer upp till 100 000 personer.</p>
+                    </div>
+                    <div class="spec-item pl-4">
+                        <h4 class="font-semibold text-white text-xl">Framdrift & Energi</h4>
+                        <p>Drivs av kraftfulla jonmotorer. Energiförsörjning via storskaliga solpaneler och interna reaktorer.</p>
+                    </div>
+                    <div class="spec-item pl-4">
+                        <h4 class="font-semibold text-white text-xl">Kärnteknologi</h4>
+                        <p>Utrustad med "The Breather" för planetär terraformering.</p>
+                    </div>
+                     <div class="spec-item pl-4">
+                        <h4 class="font-semibold text-white text-xl">Konstruktion</h4>
+                        <p>Modulär design som tillåter utbyte och anpassning av sektioner under resans gång.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Roll och Symbolik -->
+            <section class="content-card p-6 md:p-8 rounded-lg mb-8">
+                <h3 class="font-orbitron text-3xl text-cyan-200 mb-4">Roll och Symbolik</h3>
+                <p class="leading-relaxed text-lg">
+                    Ombra Prime är mer än ett skepp; det är en symbol för mänsklighetens makt, ambition och politiska vilja. Det fungerar som en testplattform för framtida kolonier och är i sig en isolerad värld. Denna isolering skapar en grogrund för växande spänningar mellan människorna, den styrande AI:n Oris och de mäktiga korporativa intressen som finns ombord.
+                </p>
+            </section>
+
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="text-center py-8 mt-16">
+            <p class="text-gray-500">
+                &copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.
+            </p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Uppdatera årtalet i footern
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
