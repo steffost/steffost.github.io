@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ombra Prime - Teknologi</title>
+    <title>Ombra Prime - Rymdskepp</title>
 
     <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -33,13 +33,15 @@
             height: 1px;
             background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
         }
-        .tech-card {
+        .ship-card {
             background-color: rgba(10, 14, 26, 0.7);
             border: 1px solid rgba(0, 191, 255, 0.2);
-            transition: border-color 0.3s ease;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
-        .tech-card:hover {
+        .ship-card:hover {
             border-color: rgba(0, 191, 255, 0.6);
+            transform: scale(1.02);
         }
     </style>
 </head>
@@ -69,51 +71,42 @@
 
         <!-- ===== HUVUDINNEHÅLL ===== -->
         <main>
-            <h2 class="font-orbitron text-4xl text-white text-center mb-10">Kärnteknologier</h2>
+            <h2 class="font-orbitron text-4xl text-white text-center mb-10">Mänsklighetens Flotta</h2>
             
-            <div class="space-y-10">
+            <div class="space-y-12">
 
-                <!-- Rymdskepp -->
-                <section id="rymdskepp" class="tech-card p-6 rounded-lg">
-                    <h3 class="font-orbitron text-3xl text-white mb-3">Rymdskepp</h3>
-                    <p class="leading-relaxed mb-4">
-                        Utforska de olika klasserna av rymdskepp som utgör mänsklighetens flotta. Från det majestätiska moderskeppet Ombra Prime till de snabba och mångsidiga skyttlarna som är avgörande för planetär utforskning och logistik. Varje skepp är en teknologisk bedrift, designad för att möta de unika utmaningarna i den interstellära rymden.
+                <!-- Moderskeppet Ombra Prime -->
+                <section id="ombra-prime" class="ship-card p-6 md:p-8 rounded-lg">
+                    <h3 class="font-orbitron text-3xl text-cyan-200 text-glow mb-3">Moderskepp: Ombra Prime</h3>
+                    <div class="divider my-4"></div>
+                    <p class="leading-relaxed text-lg mb-4">
+                        Kronjuvelen i mänsklighetens interstellära flotta och en symbol för överlevnad och hopp. Ombra Prime är inte bara ett rymdskepp; det är en självförsörjande, resande metropol. Med en längd på över 30 kilometer huserar det miljontals människor och utgör den centrala noden för hela kolonisationsuppdraget. Skeppet bär på den livsviktiga "The Breather"-teknologin, avancerade forskningslabb, produktionsanläggningar och fungerar som en mobil rymdhamn för hela flottan av mindre, specialiserade farkoster. Dess blotta existens är ett monument över mänsklig ingenjörskonst och vilja.
                     </p>
-                    <a href="rymdskepp.html" class="nav-button inline-block text-white font-semibold py-2 px-5 rounded-lg">Läs mer &rarr;</a>
                 </section>
                 
-                <!-- The Breather -->
-                <section id="breather" class="tech-card p-6 rounded-lg">
-                    <h3 class="font-orbitron text-3xl text-white mb-3">The Breather</h3>
-                    <p class="leading-relaxed mb-4">
-                        Grunden för mänsklighetens interstellära expansion. "The Breather" är en revolutionerande och komplex teknologi som analyserar och omvandlar främmande atmosfärer på molekylär nivå. Detta gör det möjligt för människor att överleva på planeter som annars skulle vara dödliga, och är en central del av Ombra Primes uppdrag.
+                <!-- Utforskningsskepp: Volans Strix -->
+                <section id="volans-strix" class="ship-card p-6 md:p-8 rounded-lg">
+                    <h3 class="font-orbitron text-3xl text-cyan-200 text-glow mb-3">Utforskare: Volans Strix</h3>
+                    <div class="divider my-4"></div>
+                    <p class="leading-relaxed text-lg mb-4">
+                        Namngiven efter en forntida jordisk rovfågel är Volans Strix-klassen flottans ögon och öron. Dessa medelstora utforskningsskepp är designade för långdistansuppdrag i okända system. Utrustade med avancerade sensorpaket, stealth-system och laboratorier för preliminär analys av planetära förhållanden, är deras uppdrag att identifiera och kartlägga potentiella nya hem för mänskligheten. Deras besättningar består av de skarpaste vetenskapsmännen och de modigaste piloterna, som ofta är de första att se en ny värld med egna ögon.
                     </p>
-                    <a href="teknologi-breather.html" class="nav-button inline-block text-white font-semibold py-2 px-5 rounded-lg">Läs mer &rarr;</a>
                 </section>
 
-                <!-- Antigravitationsmodul -->
-                <section id="antigrav" class="tech-card p-6 rounded-lg">
-                    <h3 class="font-orbitron text-3xl text-white mb-3">Antigravitationsmodul</h3>
-                    <p class="leading-relaxed mb-4">
-                        Dessa moduler är avgörande för Ombra Primes funktion och förflyttning av personal och material. Genom att manipulera lokala gravitationsfält kan modulerna skapa zoner av tyngdlöshet eller artificiell gravitation, vilket är essentiellt för allt från lastning av skyttlar till att skapa stabila livsmiljöer ombord på skeppet.
+                <!-- Eskort/Patrull: Veloc Curser -->
+                <section id="veloc-curser" class="ship-card p-6 md:p-8 rounded-lg">
+                    <h3 class="font-orbitron text-3xl text-cyan-200 text-glow mb-3">Eskort: Veloc Curser</h3>
+                    <div class="divider my-4"></div>
+                    <p class="leading-relaxed text-lg mb-4">
+                        Där Ombra Prime är skölden, är Veloc Curser-klassen svärdet. Dessa snabba och extremt manövrerbara fregatter utgör flottans primära försvars- och eskortstyrka. Deras design prioriterar hastighet och eldkraft, vilket gör dem kapabla att snabbt genskjuta hot, patrullera rymden runt moderskeppet och agera som snabbinsatsstyrka vid planetära operationer. En "Curser" är kompakt, dödlig och bemannas av piloter kända för sina nerver av stål och blixtsnabba reflexer. De är de tysta väktarna som säkerställer att resan mot en ny gryning kan fortsätta utan störningar.
                     </p>
-                    <a href="antigrav-modul.html" class="nav-button inline-block text-white font-semibold py-2 px-5 rounded-lg">Läs mer &rarr;</a>
-                </section>
-
-                <!-- Nexus Symbioticus -->
-                <section id="nexus" class="tech-card p-6 rounded-lg">
-                    <h3 class="font-orbitron text-3xl text-white mb-3">Nexus Symbioticus</h3>
-                    <p class="leading-relaxed mb-4">
-                        En banbrytande bioteknologi som integrerar ett organiskt nätverk med skeppets centrala datorsystem. Nexus Symbioticus möjliggör en nästan ögonblicklig och intuitiv dataöverföring mellan människa och maskin, vilket ger besättningen en oöverträffad kontroll och överblick över skeppets alla funktioner. Teknologin är dock inte utan sina kontroverser och risker.
-                    </p>
-                    <a href="teknologi-nexus.html" class="nav-button inline-block text-white font-semibold py-2 px-5 rounded-lg">Läs mer &rarr;</a>
                 </section>
 
             </div>
         </main>
 
         <!-- ===== FOOTER ===== -->
-        <footer class="text-center py-8 mt-12">
+        <footer class="text-center py-8 mt-16">
             <p class="text-gray-500">
                 &copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.
             </p>
