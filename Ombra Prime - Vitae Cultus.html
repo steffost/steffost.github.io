@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ombra Prime - Vitae Cultus</title>
+
+    <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Länkar in Google Fonts för ett passande typsnitt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Anpassad CSS för att finjustera designen och lägga till teman -->
+    <style>
+        /* Här definierar vi de typsnitt vi laddade ner från Google Fonts */
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .font-rajdhani {
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        /* Enkel glöd-effekt för text, passar sci-fi-temat */
+        .text-glow {
+            text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3);
+        }
+
+        /* Anpassad bakgrundsfärg */
+        body {
+            background-color: #050810; /* En mycket mörk blå, nästan svart */
+        }
+
+        /* Stil för navigeringsknapparna */
+        .nav-button {
+            background-color: rgba(0, 191, 255, 0.1); /* Genomskinlig blå */
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            transition: all 0.3s ease; /* Mjuk övergång för hover-effekten */
+        }
+        .nav-button:hover, .nav-button.active {
+            background-color: rgba(0, 191, 255, 0.3);
+            border-color: rgba(0, 191, 255, 0.8);
+            transform: translateY(-2px); /* Liten lyft-effekt */
+        }
+        
+        /* En subtil linje för att separera sektioner */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body class="font-rajdhani text-gray-300">
+
+    <!-- Huvudbehållare som centrerar allt innehåll -->
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+
+        <!-- ===== HEADER-SEKTION ===== -->
+        <header class="text-center py-12">
+            <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">
+                OMBRA PRIME
+            </h1>
+            <p class="mt-4 text-lg text-cyan-300">
+                Ett arkiv för en ny mänsklighet
+            </p>
+        </header>
+
+        <!-- ===== NAVIGERING ===== -->
+        <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
+            <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Hem</a>
+            <a href="galleri.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
+            <a href="karaktarer.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
+            <a href="teknologi.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
+            <a href="om-projektet.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
+        </nav>
+
+        <!-- ===== HÄR BÖRJAR SIDSPECIFIKT INNEHÅLL ===== -->
+        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700/50">
+            
+            <h2 class="font-orbitron text-4xl text-cyan-300 text-glow text-center mb-8">Vitae Cultus: Livets Kultivering</h2>
+
+            <!-- Introduktion -->
+            <section id="introduction" class="mb-10">
+                <h3 class="font-orbitron text-2xl text-cyan-400 mb-4">Introduktion</h3>
+                <p class="text-lg leading-relaxed">Vitae Cultus, även känt som Livets Kultivering eller Gaia-troende, är en kosmologisk religion som bygger på övertygelsen att Jorden (Gaia) är en medveten och gudomlig entitet. Mänskligheten fungerar som Gaias 'sporer', skapade för att sprida hennes livs-DNA genom universum. Detta heliga syfte driver följare att terraforma döda planeter med hjälp av 'the breather', som inte enbart ses som teknik utan som den yttersta religiösa riten.</p>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- Kärndogmer -->
+            <section id="core-dogmas" class="mb-10">
+                <h3 class="font-orbitron text-2xl text-cyan-400 mb-4">Kärndogmer</h3>
+                <ul class="space-y-3">
+                    <li class="bg-black bg-opacity-20 border-l-4 border-cyan-500 p-4 rounded-r-lg">Gaia är den medvetna, gudomliga modern till allt liv.</li>
+                    <li class="bg-black bg-opacity-20 border-l-4 border-cyan-500 p-4 rounded-r-lg">Mänskligheten är utformad som Gaias sporer för att bära hennes essens ut i kosmos.</li>
+                    <li class="bg-black bg-opacity-20 border-l-4 border-cyan-500 p-4 rounded-r-lg">Aktiveringen av 'the breather' på en karg planet är den heligaste riten.</li>
+                    <li class="bg-black bg-opacity-20 border-l-4 border-cyan-500 p-4 rounded-r-lg">Den värsta synden är att förspilla, förvanska eller vägra delta i spridningen av Gaias gåva.</li>
+                </ul>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- Kosmologi -->
+            <section id="cosmology" class="mb-10">
+                <h3 class="font-orbitron text-2xl text-cyan-400 mb-4">Universums Lagar och Kosmologi</h3>
+                <p class="mb-4 text-lg">Universum styrs av två grundläggande skyddsnät som garanterar livets beständighet:</p>
+                <ul class="space-y-4">
+                    <li class="bg-black bg-opacity-20 p-4 rounded-lg border border-gray-700"><strong>Tomheten (Mörkret):</strong> En kaotisk, konsumerande kraft som självregleras via Ouroboros-principen. När den blir dominant manifesteras Apex Monstrum – 'Toppmonstret' eller 'Den Yttersta Varningen' – ett opersonligt toppredator som förtär andra former av mörker och återställer balansen.</li>
+                    <li class="bg-black bg-opacity-20 p-4 rounded-lg border border-gray-700"><strong>Ljuset (Livet/Gaias Essens):</strong> Varje sädeskorn av Gaias DNA innehåller en gnista av ren sanning och skönhet. Om en mörk kraft försöker utplåna den sista gnistan, avslöjas denna essens och överväldigar angriparen att välja självdöd.</li>
+                </ul>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- Ritualer -->
+            <section id="rituals" class="mb-10">
+                <h3 class="font-orbitron text-2xl text-cyan-400 mb-4">Heliga Handlingar och Ritualer</h3>
+                <ul class="space-y-3">
+                    <li class="bg-black bg-opacity-20 border-l-4 border-cyan-500 p-4 rounded-r-lg"><strong>Andningens Ritual:</strong> Ceremoni för aktivering av 'the breather' på nya planeter, involverande böner och reliker från Jorden.</li>
+                    <li class="bg-black bg-opacity-20 border-l-4 border-cyan-500 p-4 rounded-r-lg"><strong>Livets Vaka:</strong> Firande av födslar som mirakel och ritualer för dödsfall för att återlämna själar till Gaia.</li>
+                    <li class="bg-black bg-opacity-20 border-l-4 border-cyan-500 p-4 rounded-r-lg"><strong>Jord-meditation (Terra Communion):</strong> Meditativa stunder, ofta med VR, för att mentalt ansluta till Gaia.</li>
+                </ul>
+            </section>
+            
+            <div class="divider"></div>
+
+            <!-- Symboler och lagar -->
+            <div class="grid md:grid-cols-2 gap-10 mb-10">
+                <section id="symbols">
+                    <h3 class="font-orbitron text-2xl text-cyan-400 mb-4">Symboler & Texter</h3>
+                    <ul class="space-y-3">
+                        <li class="bg-black bg-opacity-20 border-l-4 border-cyan-500 p-4 rounded-r-lg"><strong>Grodden:</strong> En stiliserad bild av Jorden med en utväxande DNA-spiral.</li>
+                        <li class="bg-black bg-opacity-20 border-l-4 border-cyan-500 p-4 rounded-r-lg"><strong>Sporernas Krönika:</strong> Den primära heliga texten.</li>
+                    </ul>
+                </section>
+                <section id="laws">
+                    <h3 class="font-orbitron text-2xl text-cyan-400 mb-4">Centrala Lagar</h3>
+                     <ul class="space-y-3">
+                        <li class="bg-black bg-opacity-20 border-l-4 border-cyan-500 p-4 rounded-r-lg">Lev enligt Gaias syfte.</li>
+                        <li class="bg-black bg-opacity-20 border-l-4 border-cyan-500 p-4 rounded-r-lg">Förspill ingen säd; varje liv är heligt.</li>
+                        <li class="bg-black bg-opacity-20 border-l-4 border-cyan-500 p-4 rounded-r-lg">Vörda skeppet och 'the breather'.</li>
+                        <li class="bg-black bg-opacity-20 border-l-4 border-cyan-500 p-4 rounded-r-lg">Mata inte Tomheten.</li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="divider"></div>
+
+            <!-- Fraktioner -->
+            <section id="factions" class="mb-10">
+                <h3 class="font-orbitron text-2xl text-cyan-400 mb-4">Fraktioner och Interna Konflikter</h3>
+                <ul class="space-y-4">
+                    <li class="bg-black bg-opacity-20 p-4 rounded-lg border border-gray-700"><strong>De Ortodoxa (Terra Firma):</strong> Puritaner som ser Gaias DNA som oföränderligt; anpassningar är hädelse.</li>
+                    <li class="bg-black bg-opacity-20 p-4 rounded-lg border border-gray-700"><strong>De Reformerade (Adaptanterna):</strong> Pragmatiker som betraktar evolution och anpassning som gudomliga processer.</li>
+                    <li class="bg-black bg-opacity-20 p-4 rounded-lg border border-gray-700"><strong>De Födda i Tomrummet (Noll-Gaians):</strong> Rymdfödda generationer som ifrågasätter syftet som slaveri under en främmande gud.</li>
+                </ul>
+            </section>
+
+            <!-- Tillbakaknapp (Ny position) -->
+            <div class="mt-12 flex justify-center">
+                <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    <span>Tillbaka</span>
+                </a>
+            </div>
+
+        </main>
+        <!-- ===== HÄR SLUTAR SIDSPECIFIKT INNEHÅLL ===== -->
+
+        <footer class="text-center py-8 mt-8">
+            <p class="text-gray-500">
+                &copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.
+            </p>
+        </footer>
+    </div>
+
+    <!-- Skript för att automatiskt uppdatera årtalet i footern -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script> 
+
+</body>
+</html>

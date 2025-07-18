@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ombra Prime - Verktyg</title>
+
+    <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Länkar in Google Fonts för ett passande typsnitt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Anpassad CSS för att finjustera designen och lägga till teman -->
+    <style>
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+        .text-glow { text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3); }
+        body { background-color: #050810; }
+
+        .nav-button {
+            background-color: rgba(0, 191, 255, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover, .nav-button.active {
+            background-color: rgba(0, 191, 255, 0.3);
+            border-color: rgba(0, 191, 255, 0.8);
+            transform: translateY(-2px);
+        }
+        
+        .tool-card {
+            background-color: rgba(0, 20, 40, 0.5);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .tool-card:hover {
+            background-color: rgba(0, 191, 255, 0.15);
+            border-color: rgba(0, 191, 255, 0.8);
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="font-rajdhani text-gray-300">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+
+        <header class="text-center py-12">
+            <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">OMBRA PRIME</h1>
+            <p class="mt-4 text-lg text-cyan-300">Ett arkiv för en ny mänsklighet</p>
+        </header>
+
+        <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
+            <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Hem</a>
+            <a href="galleri.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
+            <a href="karaktarer.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
+            <a href="teknologi.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
+            <a href="om-projektet.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
+        </nav>
+
+        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700/50">
+            
+            <h2 class="font-orbitron text-4xl text-cyan-300 text-glow text-center mb-4">Digitala Verktyg</h2>
+            <p class="text-lg leading-relaxed text-center max-w-2xl mx-auto mb-12">
+                I en anda av transparens och öppenhet delar jag här med mig av de digitala verktyg som utvecklas för och under arbetet med Ombra Prime. Målet är att andra ska kunna dra nytta av, och kanske till och med bygga vidare på, dessa lösningar.
+            </p>
+
+            <!-- Grid för verktygskategorier -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <a href="#" class="tool-card p-8 rounded-xl text-center h-48">
+                    <h3 class="font-orbitron text-2xl text-cyan-300 mb-2">XML Verktyg</h3>
+                    <p class="text-gray-400">Verktyg för att hantera och visualisera den XML-data som utgör världens ryggrad.</p>
+                </a>
+
+                <a href="#" class="tool-card p-8 rounded-xl text-center h-48">
+                    <h3 class="font-orbitron text-2xl text-cyan-300 mb-2">Grafiska Verktyg</h3>
+                    <p class="text-gray-400">Applikationer och skript för att arbeta med texturer och grafiska tillgångar.</p>
+                </a>
+
+                <a href="#" class="tool-card p-8 rounded-xl text-center h-48">
+                    <h3 class="font-orbitron text-2xl text-cyan-300 mb-2">Blender & Unreal</h3>
+                    <p class="text-gray-400">Plugins och hjälpmedel för att effektivisera flödet mellan Blender och Unreal Engine.</p>
+                </a>
+
+                <a href="#" class="tool-card p-8 rounded-xl text-center h-48">
+                    <h3 class="font-orbitron text-2xl text-cyan-300 mb-2">Musik och Ljud</h3>
+                    <p class="text-gray-400">Verktyg för ljuddesign, komposition och implementering av ljudeffekter.</p>
+                </a>
+                
+                <a href="#" class="tool-card p-8 rounded-xl text-center h-48 md:col-span-2">
+                    <h3 class="font-orbitron text-2xl text-cyan-300 mb-2">Streaming</h3>
+                    <p class="text-gray-400">Resurser och verktyg relaterade till streaming av utvecklingsprocessen.</p>
+                </a>
+
+            </div>
+
+            <!-- Tillbakaknapp -->
+            <div class="mt-12 flex justify-center">
+                <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    <span>Tillbaka</span>
+                </a>
+            </div>
+
+        </main>
+
+        <footer class="text-center py-8 mt-8">
+            <p class="text-gray-500">&copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script> 
+
+</body>
+</html>
