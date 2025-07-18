@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moderskeppsdatabas: Ombra Prime Ritning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617; /* Mörkaste blå, nästan svart */
+            color: #e0e0e0;
+        }
+        .font-orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .blueprint-bg {
+            background-image:
+                linear-gradient(rgba(5, 150, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(5, 150, 255, 0.1) 1px, transparent 1px);
+            background-size: 2rem 2rem;
+        }
+        .section-box {
+            border: 2px solid rgba(5, 150, 255, 0.5);
+            background-color: rgba(14, 24, 45, 0.6);
+            backdrop-filter: blur(5px);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .section-box:hover {
+            background-color: rgba(14, 24, 45, 0.9);
+            border-color: rgba(5, 150, 255, 1);
+        }
+        .connector {
+            width: 2px;
+            background-color: rgba(5, 150, 255, 0.5);
+            margin: 0 auto;
+        }
+        .fade-in {
+            animation: fadeInAnimation 1s ease-in forwards;
+            opacity: 0;
+        }
+        @keyframes fadeInAnimation {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1.0s; }
+        .delay-6 { animation-delay: 1.2s; }
+        .delay-7 { animation-delay: 1.4s; }
+        .delay-8 { animation-delay: 1.6s; }
+    </style>
+</head>
+<body class="antialiased blueprint-bg">
+
+    <!-- Header -->
+    <header class="text-center py-8 md:py-12">
+        <h1 class="text-4xl md:text-6xl font-orbitron font-black uppercase tracking-widest text-cyan-300" style="text-shadow: 0 0 10px rgba(5, 150, 255, 0.7);">OMBRA PRIME</h1>
+        <p class="text-lg md:text-xl text-cyan-400 mt-2 font-orbitron">SKEPPSSTRUKTUR - TVÄRSNITT</p>
+    </header>
+
+    <!-- Main Content: Blueprint -->
+    <main class="container mx-auto px-4 pb-16 flex flex-col items-center">
+
+        <div class="w-full max-w-4xl">
+            <!-- Sektion 01 -->
+            <div class="flex items-start justify-center gap-4 md:gap-8 fade-in delay-1">
+                <div class="text-right pt-5 hidden md:block">
+                    <h3 class="font-orbitron text-cyan-300 text-xl">SEKTION 01</h3>
+                    <p class="text-sm text-cyan-500">Arken</p>
+                </div>
+                <div class="section-box p-6 md:p-8 rounded-lg w-full md:w-2/3">
+                    <h2 class="text-2xl font-bold text-white mb-3">Övre Sektion: The Pearl (Biosfären)</h2>
+                    <p class="leading-relaxed text-slate-300">
+                        Detta är skeppets kronjuvel: en levande, komplett ark. Inuti kupolen finns ett helt ekosystem i miniatyr med alla former av liv – djur, växter och mikroorganismer – som lever i en perfekt balanserad symbios. The Pearl är inte bara en genbank, utan en fullt fungerande värld, redo att fortplanta sig och så liv på en död planet så snart The Breather har skapat en beboelig atmosfär. Tillträde är strikt begränsat.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Connector -->
+            <div class="h-16 connector fade-in delay-2"></div>
+
+            <!-- Sektion 02 -->
+            <div class="flex items-start justify-center gap-4 md:gap-8 fade-in delay-3">
+                 <div class="text-right pt-5 hidden md:block">
+                    <h3 class="font-orbitron text-cyan-300 text-xl">SEKTION 02</h3>
+                    <p class="text-sm text-cyan-500">Agrikultur</p>
+                </div>
+                <div class="section-box p-6 md:p-8 rounded-lg w-full md:w-2/3 border-teal-400/50 hover:border-teal-400">
+                    <h2 class="text-2xl font-bold text-teal-200 mb-3">Agrikultur & Akvatiska Ekosystem</h2>
+                    <p class="leading-relaxed text-slate-300">
+                        Skeppets livsmedelsnav, uppdelat i tre huvudsakliga system.
+                        <br><b>Mykologi:</b> Storskalig odling av diverse svampar med specifika uppgifter – från primär proteinkälla till symbiotiska partners i andra odlingar.
+                        <br><b>Sötvatten (Aquaponics):</b> Ett avancerat system där fiskar och växter odlas i symbios. Vattnet cirkulerar direkt med The Pearls vattensystem för att acklimatisera varelserna.
+                        <br><b>Saltvatten (Marikultur):</b> Ett enormt, havsliknande habitat för marina varelser. Här odlas även alger och tång för konsumtion i storskaliga farmer.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Connector -->
+            <div class="h-16 connector fade-in delay-4"></div>
+
+            <!-- Sektion 03 -->
+            <div class="flex items-start justify-center gap-4 md:gap-8 fade-in delay-5">
+                 <div class="text-right pt-5 hidden md:block">
+                    <h3 class="font-orbitron text-cyan-300 text-xl">SEKTION 03</h3>
+                    <p class="text-sm text-cyan-500">Staden</p>
+                </div>
+                <div class="section-box p-6 md:p-8 rounded-lg w-full md:w-2/3">
+                    <h2 class="text-2xl font-bold text-white mb-3">Mellersta Sektion: Habitat (Staden)</h2>
+                    <p class="leading-relaxed text-slate-300">
+                        Hela den mänskliga civilisationen är koncentrerad här. Detta är en fullt fungerande, levande metropol som pulserar med liv, precis som en stad på jorden. Här finns allt från myllrande marknader i de nedre distrikten, fyllda med dofter från agrikultursektorn, till tysta, grönskande bostadsområden och skyhöga skyskrapor som sträcker sig mot den artificiella himlen. Det är här de 100,000 invånarna lever, arbetar, älskar och drömmer, i en unik kultur formad av generationer i rymden.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Connector -->
+            <div class="h-16 connector fade-in delay-6"></div>
+
+            <!-- Sektion 04 -->
+            <div class="flex items-start justify-center gap-4 md:gap-8 fade-in delay-7">
+                 <div class="text-right pt-5 hidden md:block">
+                    <h3 class="font-orbitron text-cyan-300 text-xl">SEKTION 04</h3>
+                    <p class="text-sm text-cyan-500">Industri</p>
+                </div>
+                <div class="section-box p-6 md:p-8 rounded-lg w-full md:w-2/3 border-purple-400/50 hover:border-purple-400">
+                    <h2 class="text-2xl font-bold text-purple-300 mb-3">Undre Sektion: Industri (Oris Domän)</h2>
+                    <p class="leading-relaxed text-slate-300">
+                        En levande, ofattbar domän styrd av AI:n Oris. Hennes medvetande, baserat i en central kvantdator, har utvecklats långt bortom mänsklig intelligens. Här nere lever ett myrsamhälle av robotar sitt eget liv. De styr skeppet med okänd teknologi, bygger konstant ut och omstrukturerar sin omgivning. Ingen människa förstår längre fullt ut deras syften eller vad de egentligen skapar i djupet.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Connector -->
+            <div class="h-16 connector fade-in delay-7"></div>
+
+            <!-- Sektion 05 -->
+            <div class="flex items-start justify-center gap-4 md:gap-8 fade-in delay-8">
+                 <div class="text-right pt-5 hidden md:block">
+                    <h3 class="font-orbitron text-cyan-300 text-xl">SEKTION 05</h3>
+                    <p class="text-sm text-cyan-500">Forskning</p>
+                </div>
+                <div class="section-box p-6 md:p-8 rounded-lg w-full md:w-2/3 border-amber-400/50 hover:border-amber-400">
+                    <h2 class="text-2xl font-bold text-amber-200 mb-3">Bakre Sektion: Forskning & Utveckling (MR Splendids Domän)</h2>
+                    <p class="leading-relaxed text-slate-300">
+                        Denna hemliga och avskilda sektion är skeppets absoluta spjutspets inom vetenskap. All avancerad forskning och utveckling sker här under MR Splendids direkta överinseende. En plats för experiment och upptäckter som formar mänsklighetens framtid.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 mt-12 border-t border-cyan-900/50">
+        <p class="text-gray-500">Koncept för projektet "Ombra Prime". Visualisering och världsbygge.</p>
+    </footer>
+
+</body>
+</html>
