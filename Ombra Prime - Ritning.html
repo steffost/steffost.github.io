@@ -84,6 +84,16 @@
             background-color: rgba(var(--sektor-farg), 0.2);
         }
 
+        .border-hangar {
+            --sektor-farg: 234, 88, 12; /* Rost-orange */
+            border-color: rgba(var(--sektor-farg), 0.4);
+            background-color: rgba(var(--sektor-farg), 0.05);
+        }
+        .border-hangar:hover {
+            border-color: rgba(var(--sektor-farg), 1);
+            background-color: rgba(var(--sektor-farg), 0.2);
+        }
+
         .border-crypt {
             --sektor-farg: 167, 139, 250; /* Lila */
             border-color: rgba(var(--sektor-farg), 0.4);
@@ -129,6 +139,8 @@
         .delay-10 { animation-delay: 1.0s; }
         .delay-11 { animation-delay: 1.1s; }
         .delay-12 { animation-delay: 1.2s; }
+        .delay-13 { animation-delay: 1.3s; }
+        .delay-14 { animation-delay: 1.4s; }
     </style>
 </head>
 <body class="font-rajdhani text-gray-300">
@@ -173,7 +185,7 @@
                         <p class="text-sm text-cyan-500">Biosfär</p>
                     </div>
                     <a href="sektor-1.html" class="sektor-lank border-pearl p-6 rounded-lg w-full">
-                        <h2 class="font-orbitron text-2xl text-white mb-3">Övre Sektor: The Pearl (Biosfären)</h2>
+                        <h2 class="font-orbitron text-2xl text-white mb-3">The Pearl (Biosfären)</h2>
                         <p class="leading-relaxed text-gray-300">Detta är skeppets kronjuvel: en levande, komplett ark. Inuti kupolen finns ett helt ekosystem i miniatyr med alla former av liv – djur, växter och mikroorganismer – som lever i en perfekt balanserad symbios. The Pearl är inte bara en genbank, utan en fullt fungerande värld, redo att fortplanta sig och så liv på en död planet. Tillträde är strikt begränsat.</p>
                     </a>
                 </div>
@@ -201,7 +213,7 @@
                         <p class="text-sm text-cyan-500">Agrikultur</p>
                     </div>
                     <a href="sektor-3.html" class="sektor-lank border-aqua p-6 rounded-lg w-full">
-                        <h2 class="font-orbitron text-2xl text-white mb-3">EZ Aqua Core (Agrikultur & Akvatiska Ekosystem)</h2>
+                        <h2 class="font-orbitron text-2xl text-white mb-3">Övre Sektor: EZ Aqua Core (Agrikultur & Akvatiska Ekosystem)</h2>
                         <p class="leading-relaxed text-gray-300">
                             Skeppets livsmedelsnav, uppdelat i tre huvudsakliga system.
                             <br><b>Mykologi:</b> Storskalig odling av diverse svampar med specifika uppgifter.
@@ -231,11 +243,11 @@
                 <div class="flex items-center gap-6 fade-in delay-9">
                     <div class="text-right hidden sm:block w-32 shrink-0">
                         <h3 class="font-orbitron text-cyan-300 text-lg">SEKTOR 05</h3>
-                        <p class="text-sm text-cyan-500">Industri</p>
+                        <p class="text-sm text-cyan-500">Hangar</p>
                     </div>
-                    <a href="sektor-5.html" class="sektor-lank border-crypt p-6 rounded-lg w-full">
-                        <h2 class="font-orbitron text-2xl text-white mb-3">Undre Sektor: The Crypt (Industri)</h2>
-                        <p class="leading-relaxed text-gray-300">En levande, ofattbar domän styrd av AI:n Oris. Hennes medvetande, baserat i en central kvantdator, har utvecklats långt bortom mänsklig intelligens. Här nere lever ett myrsamhälle av robotar sitt eget liv. De styr skeppet med okänd teknologi, bygger konstant ut och omstrukturerar sin omgivning.</p>
+                    <a href="sektor-5.html" class="sektor-lank border-hangar p-6 rounded-lg w-full">
+                        <h2 class="font-orbitron text-2xl text-white mb-3">Undre Sektor: Hangaren (Farkost- & Transportnav)</h2>
+                        <p class="leading-relaxed text-gray-300">Härifrån startar och landar alla mindre farkoster. Hangaren är en massiv, öppen yta med kraftfält som håller atmosfären inne. Det är en ständig knutpunkt för piloter, tekniker och lastarbetare som hanterar allt från små spaningsskepp till tunga transportfordon.</p>
                     </a>
                 </div>
 
@@ -245,9 +257,23 @@
                 <div class="flex items-center gap-6 fade-in delay-11">
                     <div class="text-right hidden sm:block w-32 shrink-0">
                         <h3 class="font-orbitron text-cyan-300 text-lg">SEKTOR 06</h3>
+                        <p class="text-sm text-cyan-500">Industri</p>
+                    </div>
+                    <a href="sektor-6.html" class="sektor-lank border-crypt p-6 rounded-lg w-full">
+                        <h2 class="font-orbitron text-2xl text-white mb-3">The Crypt (Industri)</h2>
+                        <p class="leading-relaxed text-gray-300">En levande, ofattbar domän styrd av AI:n Oris. Hennes medvetande, baserat i en central kvantdator, har utvecklats långt bortom mänsklig intelligens. Här nere lever ett myrsamhälle av robotar sitt eget liv. De styr skeppet med okänd teknologi, bygger konstant ut och omstrukturerar sin omgivning.</p>
+                    </a>
+                </div>
+
+                <div class="h-12 connector fade-in delay-12"></div>
+
+                <!-- Sektor 07 -->
+                <div class="flex items-center gap-6 fade-in delay-13">
+                    <div class="text-right hidden sm:block w-32 shrink-0">
+                        <h3 class="font-orbitron text-cyan-300 text-lg">SEKTOR 07</h3>
                         <p class="text-sm text-cyan-500">FoU</p>
                     </div>
-                    <a href="sektor-6.html" class="sektor-lank border-chamber p-6 rounded-lg w-full">
+                    <a href="sektor-7.html" class="sektor-lank border-chamber p-6 rounded-lg w-full">
                         <h2 class="font-orbitron text-2xl text-white mb-3">Bakre Sektor: The Chamber (Forskning & Utveckling)</h2>
                         <p class="leading-relaxed text-gray-300">Denna hemliga och avskilda sektion är skeppets absoluta spjutspets inom vetenskap. All avancerad forskning och utveckling sker här under MR Splendids direkta överinseende. En plats för experiment och upptäckter som formar mänsklighetens framtid.</p>
                     </a>
