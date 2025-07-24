@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ombra Prime - Välkommen</title>
+    <title>Ombra Prime - Grundmall</title>
 
     <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -45,13 +45,6 @@
             transform: translateY(-2px); /* Liten lyft-effekt */
         }
         
-        /* Stil för den aktiva navigeringsknappen (om du vill markera "Hem") */
-        .active-nav {
-            background-color: rgba(0, 191, 255, 0.3);
-            border-color: rgba(0, 191, 255, 0.8);
-            cursor: default;
-        }
-
         /* En subtil linje för att separera sektioner */
         .divider {
             height: 1px;
@@ -62,9 +55,10 @@
 <body class="font-rajdhani text-gray-300">
 
     <!-- Huvudbehållare som centrerar allt innehåll -->
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl"> <!-- Ökad max-bredd för fler knappar -->
 
         <!-- ===== HEADER-SEKTION ===== -->
+        <!-- Här ligger huvudtiteln för sidan. -->
         <header class="text-center py-12">
             <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">
                 OMBRA PRIME
@@ -75,8 +69,9 @@
         </header>
 
         <!-- ===== NAVIGERING (UPPDATERAD) ===== -->
+        <!-- Huvudmenyn med de nya kategorierna. -->
         <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
-            <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg active-nav">Hem</a>
+            <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Hem</a>
             <a href="galleri.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
             <a href="karaktarer.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
             <a href="vetenskap.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Vetenskap</a>
@@ -85,52 +80,45 @@
             <a href="om-projektet.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
         </nav>
 
-        <!-- ===== HUVUDINNEHÅLL ===== -->
-        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700">
-            
-            <!-- Välkomstsektion -->
-            <section id="welcome">
-                <h2 class="font-orbitron text-3xl text-white mb-4">Välkommen till moderskeppet</h2>
-                <p class="text-lg leading-relaxed mb-4">
-                    Detta är ett levande arkiv och en utforskning av universumet Ombra Prime. Här dokumenteras mänsklighetens första steg ut i den stora rymden, möjliggjort av den revolutionerande teknologin "The Breather". Följ med på resan ombord på det gigantiska moderskeppet som är vårt hem och vår framtid.
+        <!-- ===== HÄR BÖRJAR SIDSPECIFIKT INNEHÅLL ===== -->
+        <!--
+            Kopiera in din <main>-sektion och <footer> här för varje ny sida.
+            Exempelvis för vetenskap.html:
+
+            <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700">
+                <section id="fysik">
+                    <h2>Fysik</h2>
+                    <p>Här är innehållet om fysik...</p>
+                </section>
+                <div class="divider my-8"></div>
+                <section id="kemi">
+                    <h2>Kemi</h2>
+                    <p>Här är innehållet om kemi...</p>
+                </section>
+                <div class="divider my-8"></div>
+                <section id="biologi">
+                    <h2>Biologi</h2>
+                    <p>Här är innehållet om biologi...</p>
+                </section>
+            </main>
+
+            <footer class="text-center py-8 mt-8">
+                <p class="text-gray-500">
+                    &copy; <span id="year">2024</span> Steffo. Alla rättigheter förbehållna.
                 </p>
-                <p class="leading-relaxed">
-                    Projektet är skapat med verktyg som Unreal Engine, Blender och Substance Painter för att visuellt utforska de stora livsfrågor som uppstår när människan tar klivet ut i det okända.
-                </p>
-            </section>
+            </footer>
+        -->
+        <!-- ===== HÄR SLUTAR SIDSPECIFIKT INNEHÅLL ===== -->
 
-            <div class="divider my-8"></div>
-
-            <!-- Exempelsektion för att visa hur du lägger till mer innehåll -->
-            <section id="the-breather">
-                <h3 class="font-orbitron text-2xl text-white mb-4">Teknologin: The Breather</h3>
-                <div class="md:flex md:gap-6 items-center">
-                    <!-- Byt ut placeholder-bilden mot en egen bild. Lägg den i en "images"-mapp och ändra src-länken. -->
-                    <img src="https://placehold.co/600x400/050810/00bfff?text=The+Breather" 
-                         alt="Konceptbild av The Breather-teknologin" 
-                         class="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 border-2 border-gray-700">
-                    <p class="leading-relaxed md:w-2/3">
-                        <!-- Här kan du skriva mer om The Breather. -->
-                        "The Breather" är mer än bara en maskin; det är en symbiotisk teknologi som gör det möjligt för människor att överleva och anpassa sig till främmande atmosfärer. Den analyserar och omvandlar omgivningen på molekylär nivå, vilket är grunden för vår interstellära kolonisation. Här kommer vi att utforska dess funktion, ursprung och de etiska dilemman den medför.
-                    </p>
-                </div>
-            </section>
-
-        </main>
-
-        <!-- ===== FOOTER ===== -->
-        <footer class="text-center py-8 mt-8">
-            <p class="text-gray-500">
-                &copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.
-            </p>
-        </footer>
 
     </div>
 
-    <!-- Ett litet skript för att automatiskt uppdatera årtalet i footern -->
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <!-- Eventuella skript som behövs för den specifika sidan kan läggas här -->
+    <!-- 
+        <script>
+            // Exempel: document.getElementById('year').textContent = new Date().getFullYear();
+        </script> 
+    -->
 
 </body>
 </html>

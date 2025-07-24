@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ombra Prime - Välkommen</title>
+    <title>Ombra Prime - Vetenskap</title>
 
     <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -45,17 +45,27 @@
             transform: translateY(-2px); /* Liten lyft-effekt */
         }
         
-        /* Stil för den aktiva navigeringsknappen (om du vill markera "Hem") */
+        /* Stil för den aktiva navigeringsknappen */
         .active-nav {
             background-color: rgba(0, 191, 255, 0.3);
             border-color: rgba(0, 191, 255, 0.8);
-            cursor: default;
+            cursor: default; /* Visar att knappen inte är klickbar på sin egen sida */
         }
 
         /* En subtil linje för att separera sektioner */
         .divider {
             height: 1px;
             background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
+        }
+
+        /* Stil för rubriker inuti innehållet */
+        .content-header {
+            font-family: 'Orbitron', sans-serif;
+            color: #93c5fd; /* Ljusblå färg */
+            font-size: 1.75rem; /* Lite större text */
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(0, 191, 255, 0.2);
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -74,48 +84,53 @@
             </p>
         </header>
 
-        <!-- ===== NAVIGERING (UPPDATERAD) ===== -->
+        <!-- ===== NAVIGERING ===== -->
         <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
-            <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg active-nav">Hem</a>
+            <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Hem</a>
             <a href="galleri.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
             <a href="karaktarer.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
-            <a href="vetenskap.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Vetenskap</a>
+            <a href="vetenskap.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg active-nav">Vetenskap</a>
             <a href="mening-och-medvetande.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Mening & Medvetande</a>
             <a href="teknologi.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
             <a href="om-projektet.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
         </nav>
 
-        <!-- ===== HUVUDINNEHÅLL ===== -->
-        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700">
+        <!-- ===== SIDSPECIFIKT INNEHÅLL FÖR VETENSKAP ===== -->
+        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700 leading-relaxed">
             
-            <!-- Välkomstsektion -->
-            <section id="welcome">
-                <h2 class="font-orbitron text-3xl text-white mb-4">Välkommen till moderskeppet</h2>
-                <p class="text-lg leading-relaxed mb-4">
-                    Detta är ett levande arkiv och en utforskning av universumet Ombra Prime. Här dokumenteras mänsklighetens första steg ut i den stora rymden, möjliggjort av den revolutionerande teknologin "The Breather". Följ med på resan ombord på det gigantiska moderskeppet som är vårt hem och vår framtid.
-                </p>
-                <p class="leading-relaxed">
-                    Projektet är skapat med verktyg som Unreal Engine, Blender och Substance Painter för att visuellt utforska de stora livsfrågor som uppstår när människan tar klivet ut i det okända.
-                </p>
+            <!-- Fysik-sektionen (nu en länk) -->
+            <section id="fysik">
+                <a href="fysik.html" class="block p-4 -m-4 rounded-lg hover:bg-gray-800/50 transition-colors duration-300">
+                    <h2 class="content-header">Fysik</h2>
+                    <p>
+                        Studiet av universums fundamentala lagar, från de subatomära partiklarnas dans till den kosmiska baletten av galaxer. Här arkiveras vår förståelse av materia, energi, rum och tid – grunden för all teknologi och vår resa mot stjärnorna.
+                    </p>
+                </a>
             </section>
 
             <div class="divider my-8"></div>
 
-            <!-- Exempelsektion för att visa hur du lägger till mer innehåll -->
-            <section id="the-breather">
-                <h3 class="font-orbitron text-2xl text-white mb-4">Teknologin: The Breather</h3>
-                <div class="md:flex md:gap-6 items-center">
-                    <!-- Byt ut placeholder-bilden mot en egen bild. Lägg den i en "images"-mapp och ändra src-länken. -->
-                    <img src="https://placehold.co/600x400/050810/00bfff?text=The+Breather" 
-                         alt="Konceptbild av The Breather-teknologin" 
-                         class="w-full md:w-1/3 rounded-lg mb-4 md:mb-0 border-2 border-gray-700">
-                    <p class="leading-relaxed md:w-2/3">
-                        <!-- Här kan du skriva mer om The Breather. -->
-                        "The Breather" är mer än bara en maskin; det är en symbiotisk teknologi som gör det möjligt för människor att överleva och anpassa sig till främmande atmosfärer. Den analyserar och omvandlar omgivningen på molekylär nivå, vilket är grunden för vår interstellära kolonisation. Här kommer vi att utforska dess funktion, ursprung och de etiska dilemman den medför.
+            <!-- Kemi-sektionen (nu en länk) -->
+            <section id="kemi">
+                 <a href="kemi.html" class="block p-4 -m-4 rounded-lg hover:bg-gray-800/50 transition-colors duration-300">
+                    <h2 class="content-header">Kemi</h2>
+                    <p>
+                        Utforskandet av materiens sammansättning, struktur och omvandling. Från de molekylära bindningar som skapar liv till de syntetiska föreningar som bygger vår nya värld. Kemin är vetenskapen om materia och dess potential.
                     </p>
-                </div>
+                </a>
             </section>
+            
+            <div class="divider my-8"></div>
 
+            <!-- Biologi-sektionen (nu en länk) -->
+            <section id="biologi">
+                <a href="biologi.html" class="block p-4 -m-4 rounded-lg hover:bg-gray-800/50 transition-colors duration-300">
+                    <h2 class="content-header">Biologi</h2>
+                    <p>
+                        Läran om livet i alla dess former. Detta arkiv spänner från de enklaste mikroorganismer till de komplexa ekosystem vi möter på främmande världar. Här dokumenteras livets ursprung, evolution och de mekanismer som definierar det.
+                    </p>
+                </a>
+            </section>
         </main>
 
         <!-- ===== FOOTER ===== -->
@@ -127,10 +142,10 @@
 
     </div>
 
-    <!-- Ett litet skript för att automatiskt uppdatera årtalet i footern -->
+    <!-- Skript för att automatiskt uppdatera årtalet i footern -->
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    </script> 
 
 </body>
 </html>
