@@ -110,6 +110,7 @@
 
         input[type=range] {
             -webkit-appearance: none;
+            appearance: none;
             width: 100%;
             background: transparent;
         }
@@ -140,12 +141,17 @@
         .node {
             background-color: var(--bg-color-light); border: 1px solid var(--ui-glow); border-radius: 0.5rem;
             box-shadow: 0 0 8px rgba(31, 81, 255, 0.3); transition: all 0.3s ease; cursor: pointer;
-            position: absolute; width: 170px; height: 85px; display: flex; flex-direction: column;
-            align-items: center; justify-content: center; text-align: center; padding: 8px; font-size: 0.9rem; line-height: 1.2;
+            position: absolute; width: 170px; height: auto; min-height: 85px; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; text-align: center; padding: 8px;
         }
         .node:hover { transform: scale(1.05) translate(-50%, -50%); box-shadow: 0 0 15px var(--highlight-color); border-color: var(--highlight-color); color: var(--highlight-color); }
         .node.highlight { transform: scale(1.05) translate(-50%, -50%); box-shadow: 0 0 20px var(--highlight-color), 0 0 30px var(--highlight-color); border-color: var(--highlight-color); color: var(--highlight-color); }
         
+        .node strong { font-weight: 600; font-size: 0.9rem; line-height: 1.1; color: var(--text-color); margin-bottom: 6px; }
+        .status-container { display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .status-light { width: 8px; height: 8px; border-radius: 50%; transition: all 0.3s ease; }
+        .node-value { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; color: var(--ui-glow); }
+
         .module-node {
             background-color: var(--bg-module-color);
             border: 1px solid var(--ui-glow);
@@ -209,7 +215,7 @@
 <body class="bg-gray-900 text-gray-200 flex items-center justify-center h-screen p-4">
     
     <!-- Tillbakaknapp -->
-    <a href="antigrav-modul.html" class="nav-button absolute top-6 left-6 z-50 inline-flex items-center text-white font-semibold py-2 px-4 rounded-lg">
+    <a href="levitas-aequilibrium.html" class="nav-button absolute top-6 left-6 z-50 inline-flex items-center text-white font-semibold py-2 px-4 rounded-lg">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short mr-2" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
         </svg>
@@ -324,7 +330,7 @@
                 nodeEl.style.left = `${node.pos.x}%`;
                 nodeEl.style.top = `${node.pos.y}%`;
                 nodeEl.style.transform = 'translate(-50%, -50%)';
-                nodeEl.innerHTML = `<div class="node-text">${node.text}</div><div class="status-container"><div id="light-${id}" class="status-light"></div><span id="stat-${id}"></span></div>`;
+                nodeEl.innerHTML = `<strong>${node.text}</strong><div class="status-container"><div id="light-${id}" class="status-light"></div><span id="stat-${id}" class="node-value"></span></div>`;
                 nodeEl.addEventListener('click', (event) => showNodeModal(id, event));
                 nodeEl.addEventListener('mouseenter', () => highlightConnections(id));
                 nodeEl.addEventListener('mouseleave', () => clearHighlights());
@@ -379,7 +385,7 @@
             const powerDemand = (nodes.fangare.baseValue * capture / 7.3) + (nodes.riktare.baseValue * focus / 87.5);
             const chargeBalance = (powerIn / (powerDemand * 0.7)) * charge;
             nodes.kondensator.value = Math.min(110, nodes.kondensator.baseValue * chargeBalance);
-            const capacitorPower = Math.max(0, nodes.kondensator.value / 100);
+            const capacitorPower = Math.max(0, (nodes.kondensator.value - 50) / 50); // Adjusted for more sensitivity
             nodes.fangare.value = nodes.fangare.baseValue * capture * capacitorPower;
             nodes.gravitoner.value = nodes.gravitoner.baseValue * capture * capacitorPower;
             const gravitonOutput = nodes.gravitoner.value / nodes.gravitoner.baseValue;
@@ -484,7 +490,6 @@
             modal.style.display = 'block';
             modalOverlay.style.display = 'block';
 
-            // Center the modal
             modal.style.left = '50%';
             modal.style.top = '50%';
             modal.style.transform = 'translate(-50%, -50%)';
