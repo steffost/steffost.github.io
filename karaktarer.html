@@ -29,6 +29,11 @@
             border-color: rgba(0, 191, 255, 0.8);
             transform: translateY(-2px);
         }
+        .active-nav {
+            background-color: rgba(0, 191, 255, 0.3);
+            border-color: rgba(0, 191, 255, 0.8);
+            cursor: default;
+        }
         .divider {
             height: 1px;
             background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
@@ -100,11 +105,13 @@
             </p>
         </header>
 
-        <!-- ===== NAVIGERING ===== -->
+        <!-- ===== NAVIGERING (UPPDATERAD) ===== -->
         <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
             <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Hem</a>
             <a href="galleri.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
-            <a href="karaktarer.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
+            <a href="karaktarer.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg active-nav">Karaktärer</a>
+            <a href="vetenskap.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Vetenskap</a>
+            <a href="mening-och-medvetande.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Mening & Medvetande</a>
             <a href="teknologi.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
             <a href="om-projektet.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
         </nav>
@@ -239,19 +246,17 @@
 
         // Funktion för att hämta ett värde från ett XML-element.
         function getElementValue(xmlElement, tagName) {
-            // FIX: Hanterar fall där xmlElement inte existerar för att förhindra fel.
             if (!xmlElement) {
-                return 'N/A';
+                return ''; // Returnerar tomt istället för 'N/A' för ett renare utseende
             }
             const element = xmlElement.getElementsByTagName(tagName)[0];
-            return element ? element.textContent : 'N/A';
+            return element ? element.textContent : '';
         }
 
         // Funktion för att hämta en lista med värden från XML-element.
         function getElementList(xmlElement, listName, itemName) {
-            // FIX: Hanterar fall där xmlElement inte existerar för att förhindra fel.
             if (!xmlElement) {
-                return ''; // Returnerar en tom sträng för att undvika att HTML-strukturen bryts.
+                return ''; 
             }
             const list = xmlElement.getElementsByTagName(listName)[0];
             if (!list) return '';
@@ -299,40 +304,57 @@
                 const title = getElementValue(character, 'Title');
                 const description = getElementValue(character, 'Description');
                 const appearance = getElementValue(character.getElementsByTagName('Appearance')[0], 'Description');
-                const aliases = getElementList(character, 'Aliases', 'Alias');
+                
+                const aliasesList = Array.from(character.querySelectorAll('Aliases Alias')).map(el => el.textContent).join(', ');
                 const traits = getElementList(character.getElementsByTagName('Personality')[0], 'Traits', 'Trait');
-                const age = getElementValue(character.getElementsByTagName('Background')[0], 'Age');
-                const origin = getElementValue(character.getElementsByTagName('Background')[0], 'Origin');
-                const socialStatus = getElementValue(character.getElementsByTagName('Background')[0], 'SocialStatus');
-                const history = getElementList(character.getElementsByTagName('Background')[0], 'History', 'Event');
+                
+                const background = character.getElementsByTagName('Background')[0];
+                const age = getElementValue(background, 'Age');
+                const origin = getElementValue(background, 'Origin');
+                const socialStatus = getElementValue(background, 'SocialStatus');
+                const history = getElementList(background, 'History', 'Event');
 
-                // Bygg HTML-innehållet för modalen
-                modalBody.innerHTML = `
+                // Bygg HTML-innehållet för modalen dynamiskt
+                let modalHtml = `
                     <h2 class="font-orbitron text-3xl text-white text-glow mb-2">${name}</h2>
                     <p class="text-cyan-300 text-lg mb-4">${title}</p>
-                    ${aliases.length > 0 ? `<p class="mb-4 text-sm text-gray-400">Alias: ${aliases.replace(/<li>/g, '').replace(/<\/li>/g, ', ').slice(0, -2)}</p>` : ''}
-                    
+                    ${aliasesList ? `<p class="mb-4 text-sm text-gray-400">Alias: ${aliasesList}</p>` : ''}
                     <div class="divider my-4"></div>
-                    
                     <p class="text-lg leading-relaxed mb-6">${description}</p>
-                    
-                    <h3 class="font-orbitron text-xl text-white mb-2">Bakgrund</h3>
-                    <ul class="list-disc list-inside mb-4 space-y-1">
-                        <li><strong>Ålder:</strong> ${age}</li>
-                        <li><strong>Ursprung:</strong> ${origin}</li>
-                        <li><strong>Social Status:</strong> ${socialStatus}</li>
-                    </ul>
-                    
-                    <h4 class="font-orbitron text-lg text-white mb-2">Historia</h4>
-                    <ul class="list-disc list-inside mb-6 space-y-1">${history}</ul>
-
-                    <h3 class="font-orbitron text-xl text-white mb-2">Utseende</h3>
-                    <p class="leading-relaxed mb-6">${appearance}</p>
-                    
-                    <h3 class="font-orbitron text-xl text-white mb-2">Personlighetsdrag</h3>
-                    <ul class="list-disc list-inside mb-4 space-y-1">${traits}</ul>
                 `;
-                
+
+                if (age || origin || socialStatus || history) {
+                    modalHtml += `<h3 class="font-orbitron text-xl text-white mb-2">Bakgrund</h3>`;
+                    let backgroundList = '<ul class="list-disc list-inside mb-4 space-y-1">';
+                    if (age) backgroundList += `<li><strong>Ålder:</strong> ${age}</li>`;
+                    if (origin) backgroundList += `<li><strong>Ursprung:</strong> ${origin}</li>`;
+                    if (socialStatus) backgroundList += `<li><strong>Social Status:</strong> ${socialStatus}</li>`;
+                    backgroundList += '</ul>';
+                    modalHtml += backgroundList;
+
+                    if (history) {
+                        modalHtml += `
+                            <h4 class="font-orbitron text-lg text-white mb-2">Historia</h4>
+                            <ul class="list-disc list-inside mb-6 space-y-1">${history}</ul>
+                        `;
+                    }
+                }
+
+                if (appearance) {
+                    modalHtml += `
+                        <h3 class="font-orbitron text-xl text-white mb-2">Utseende</h3>
+                        <p class="leading-relaxed mb-6">${appearance}</p>
+                    `;
+                }
+
+                if (traits) {
+                     modalHtml += `
+                        <h3 class="font-orbitron text-xl text-white mb-2">Personlighetsdrag</h3>
+                        <ul class="list-disc list-inside mb-4 space-y-1">${traits}</ul>
+                    `;
+                }
+
+                modalBody.innerHTML = modalHtml;
                 modal.style.display = "block";
             }
 
