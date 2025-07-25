@@ -146,7 +146,6 @@
         .node:hover { transform: scale(1.05) translate(-50%, -50%); box-shadow: 0 0 15px var(--highlight-color); border-color: var(--highlight-color); color: var(--highlight-color); }
         .node.highlight { transform: scale(1.05) translate(-50%, -50%); box-shadow: 0 0 20px var(--highlight-color), 0 0 30px var(--highlight-color); border-color: var(--highlight-color); color: var(--highlight-color); }
         
-        /* UPDATED: Triple-frame effect for modules */
         .module-node {
             background-color: var(--bg-module-color);
             border: 1px solid var(--ui-glow);
@@ -195,9 +194,27 @@
             box-shadow: 0 0 10px var(--status-green);
         }
         
+        .nav-button {
+            background-color: rgba(0, 191, 255, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+        .nav-button:hover {
+            background-color: rgba(0, 191, 255, 0.3);
+            border-color: rgba(0, 191, 255, 0.8);
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-200 flex items-center justify-center h-screen p-4">
+    
+    <!-- Tillbakaknapp -->
+    <a href="antigrav-modul.html" class="nav-button absolute top-6 left-6 z-50 inline-flex items-center text-white font-semibold py-2 px-4 rounded-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short mr-2" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+        </svg>
+        Tillbaka till LA-Modul
+    </a>
 
     <div class="main-grid max-w-[1700px] max-h-[950px]">
         <div class="system-container">
@@ -244,7 +261,7 @@
     <div id="info-modal" class="p-6 rounded-xl text-white">
         <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-400 hover:text-white transition-colors">
              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
         </button>
         <h2 id="modal-title" class="font-orbitron text-xl mb-2"></h2>
