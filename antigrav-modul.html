@@ -58,27 +58,8 @@
             </p>
         </header>
 
-        <!-- ===== NAVIGERING ===== -->
-        <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12">
-            <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Hem</a>
-            <a href="galleri.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Galleri</a>
-            <a href="karaktarer.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Karaktärer</a>
-            <a href="teknologi.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Teknologi</a>
-            <a href="om-projektet.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">Om Projektet</a>
-        </nav>
-
         <!-- ===== HUVUDINNEHÅLL ===== -->
         <main>
-            <!-- Tillbakaknapp -->
-            <div class="mb-8">
-                <a href="teknologi.html" class="nav-button inline-flex items-center text-white font-semibold py-2 px-4 rounded-lg">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short mr-2" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
-                    </svg>
-                    Tillbaka till Teknologier
-                </a>
-            </div>
-
             <!-- Huvudsektion med bild -->
             <section class="flex flex-col md:flex-row gap-8 items-center mb-8 bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700">
                 <div class="md:w-2/3">
@@ -99,22 +80,23 @@
             <section class="mb-8">
                  <h3 class="font-orbitron text-3xl text-white mb-6 text-center">Modulens Komponenter</h3>
                  <div class="grid md:grid-cols-2 gap-6">
-                    <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border border-gray-800">
+                    <!-- Varje kort är nu en länk -->
+                    <a href="kvantresonanskammare.html" class="block bg-gray-900 bg-opacity-50 p-4 rounded-lg border border-gray-800 hover:bg-gray-800 hover:border-cyan-500 hover:-translate-y-1 transition-all duration-300">
                         <h4 class="font-orbitron text-xl text-cyan-300 mb-2">Kvantresonanskammare</h4>
                         <p>Genererar kontrollerade kvantfluktuationer för att inducera resonans med nollpunktsenergi, vilket skapar ett svagt antigravitationsfält.</p>
-                    </div>
-                    <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border border-gray-800">
-                        <h4 class="font-orbitron text-xl text-cyan-300 mb-2">Gravitonuppfångare</h4>
+                    </a>
+                    <a href="gravitonfangare.html" class="block bg-gray-900 bg-opacity-50 p-4 rounded-lg border border-gray-800 hover:bg-gray-800 hover:border-cyan-500 hover:-translate-y-1 transition-all duration-300">
+                        <h4 class="font-orbitron text-xl text-cyan-300 mb-2">Gravitonfångare</h4>
                         <p>Fångar in och omvandlar energin från omgivande gravitoner för att kontinuerligt försörja modulen med energi.</p>
-                    </div>
-                    <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border border-gray-800">
-                        <h4 class="font-orbitron text-xl text-cyan-300 mb-2">Fältstyrning</h4>
+                    </a>
+                    <a href="faltriktare.html" class="block bg-gray-900 bg-opacity-50 p-4 rounded-lg border border-gray-800 hover:bg-gray-800 hover:border-cyan-500 hover:-translate-y-1 transition-all duration-300">
+                        <h4 class="font-orbitron text-xl text-cyan-300 mb-2">Fältriktare</h4>
                         <p>Kontrollerar och fokuserar antigravitationsfältet med extrem precision, vilket ger exakt kontroll över levitation och rörelse.</p>
-                    </div>
-                    <div class="bg-gray-900 bg-opacity-50 p-4 rounded-lg border border-gray-800">
+                    </a>
+                    <a href="energikondensator.html" class="block bg-gray-900 bg-opacity-50 p-4 rounded-lg border border-gray-800 hover:bg-gray-800 hover:border-cyan-500 hover:-translate-y-1 transition-all duration-300">
                         <h4 class="font-orbitron text-xl text-cyan-300 mb-2">Energikondensator</h4>
                         <p>Samlar in, stabiliserar och lagrar överflödig energi från processen, vilket garanterar en extremt låg extern energiförbrukning.</p>
-                    </div>
+                    </a>
                  </div>
             </section>
 
@@ -125,8 +107,8 @@
                  <h3 class="font-orbitron text-3xl text-white mb-6 text-center">Funktionsprincip</h3>
                  <ol class="list-decimal list-inside space-y-4 text-lg">
                     <li><strong>Kvantresonans:</strong> Kvantresonanskammaren skapar en svag, kontrollerad störning i vakuumet, vilket genererar ett initialt antigravitationsfält.</li>
-                    <li><strong>Gravitoninfångning:</strong> Gravitonuppfångaren samlar in energi från naturligt förekommande gravitoner i omgivningen, vilket driver systemet.</li>
-                    <li><strong>Fältkontroll:</strong> Fältstyrningen tar det kombinerade fältet och riktar det för att möjliggöra kontrollerad levitation och rörelse med hög precision.</li>
+                    <li><strong>Gravitoninfångning:</strong> Gravitonfångaren samlar in energi från naturligt förekommande gravitoner i omgivningen, vilket driver systemet.</li>
+                    <li><strong>Fältkontroll:</strong> Fältriktaren tar det kombinerade fältet och riktar det för att möjliggöra kontrollerad levitation och rörelse med hög precision.</li>
                     <li><strong>Energiåtervinning:</strong> Energikondensatorn lagrar all överskottsenergi, vilket gör modulen nästan självförsörjande under drift.</li>
                  </ol>
             </section>
@@ -145,8 +127,19 @@
             </section>
         </main>
 
+        <!-- Tillbakaknapp (flyttad hit) -->
+        <div class="text-center my-12">
+            <a href="teknologi.html" class="nav-button inline-flex items-center text-white font-semibold py-2 px-4 rounded-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-short mr-2" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
+                </svg>
+                Tillbaka till Teknologier
+            </a>
+        </div>
+
+
         <!-- ===== FOOTER ===== -->
-        <footer class="text-center py-8 mt-12">
+        <footer class="text-center py-8">
             <p class="text-gray-500">
                 &copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.
             </p>
