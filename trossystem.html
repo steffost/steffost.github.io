@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ombra Prime - Trossystem</title>
+
+    <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Länkar in Google Fonts för ett passande typsnitt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Anpassad CSS för att finjustera designen och lägga till teman -->
+    <style>
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+        .text-glow { text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3); }
+        body { background-color: #050810; }
+
+        .nav-button {
+            background-color: rgba(0, 191, 255, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none; /* Ensure links don't have underlines */
+        }
+        .nav-button:hover, .nav-button.active {
+            background-color: rgba(0, 191, 255, 0.3);
+            border-color: rgba(0, 191, 255, 0.8);
+            transform: translateY(-2px);
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background-color: rgba(0, 20, 40, 0.5);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+<body class="font-rajdhani text-gray-300">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+
+        <header class="text-center py-12">
+            <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">OMBRA PRIME</h1>
+            <p class="mt-4 text-lg text-cyan-300">Ett arkiv för en ny mänsklighet</p>
+        </header>
+
+        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700/50 mt-12">
+            
+            <h2 class="font-orbitron text-4xl text-cyan-300 text-glow text-center mb-8">Trossystem & Heliga Skrifter</h2>
+
+            <section id="intro" class="mb-10 text-center">
+                <p class="text-lg leading-relaxed max-w-2xl mx-auto">Instängda i Ombra Primes metalliska famn, generation efter generation, har mänsklighetens gamla trossystem transformerats. Den mest dominanta tron är känd som Vitae Cultus, en tro som ger syfte och mening åt den ändlösa resan genom tomrummet.</p>
+            </section>
+
+            <div class="divider"></div>
+
+            <section id="vitae-cultus" class="mb-10">
+                <div class="info-card">
+                    <h3 class="font-orbitron text-3xl text-cyan-300 mb-4">Vitae Cultus (Livets Kultivering)</h3>
+                    <p class="text-lg leading-relaxed mb-6">En religion baserad på övertygelsen att mänskligheten är skapad av den medvetna Jorden (Gaia) för att sprida hennes livs-DNA i kosmos. De som följer tron kallas allmänt för "Gaians".</p>
+                    
+                    <h4 class="font-orbitron text-xl text-cyan-400 mb-3">Kärndogmer:</h4>
+                    <ul class="space-y-2 list-disc list-inside mb-6">
+                        <li><strong>Den Gudomliga Modern:</strong> Jorden (Gaia) är en medveten, gudomlig entitet.</li>
+                        <li><strong>Det Heliga Syftet:</strong> Mänskligheten är Gaias 'sporer', ämnade att så liv i kosmos.</li>
+                        <li><strong>Den Stora Impregnationen:</strong> Att använda 'the breather' är den yttersta religiösa riten.</li>
+                        <li><strong>Den Stora Synden:</strong> Att förspilla eller förvanska Gaias gåva är den värsta tänkbara synden.</li>
+                    </ul>
+
+                    <div class="flex justify-center">
+                        <a href="Ombra Prime - Vitae Cultus.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">
+                            Läs mer om Vitae Cultus
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section id="sporernas-kronika" class="mb-10">
+                <div class="info-card">
+                    <h3 class="font-orbitron text-3xl text-cyan-300 mb-4">Sporernas Krönika</h3>
+                    <p class="text-lg leading-relaxed mb-6">Den primära heliga texten för Vitae Cultus. Krönikan innehåller skapelsemyten, kosmologin, lagar för livet ombord på Ombra Prime och profetior om mänsklighetens syfte bland stjärnorna.</p>
+
+                    <blockquote class="border-l-4 border-cyan-500 pl-4 py-2 my-6 bg-black bg-opacity-20 rounded-r-lg">
+                        <p class="text-lg italic text-gray-400">"Och Hon talade till dem, Sin främsta skapelse, och sade: 'Ni är Min Säd. I er har jag lagt Min essens, Min kod, Min vilja att skapa. Ni är kärl för Min Andedräkt. Gå ut, min Säd, och gör Tomheten fruktsam.'"</p>
+                        <cite class="block text-right mt-2 text-cyan-400">- Sporernas Krönika 1:5</cite>
+                    </blockquote>
+
+                    <div class="flex justify-center">
+                        <a href="sporernas-kronika-details.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg">
+                            Utforska Sporernas Krönika
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tillbakaknapp -->
+            <div class="mt-12 flex justify-center">
+                <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    <span>Tillbaka</span>
+                </a>
+            </div>
+
+        </main>
+
+        <footer class="text-center py-8 mt-8">
+            <p class="text-gray-500">&copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Sätter aktuellt år i sidfoten
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script> 
+
+</body>
+</html>
