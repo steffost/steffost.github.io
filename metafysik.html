@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ombra Prime - Metafysik</title>
+
+    <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Länkar in Google Fonts för ett passande typsnitt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Anpassad CSS för att finjustera designen och lägga till teman -->
+    <style>
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+        .text-glow { text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3); }
+        body { background-color: #050810; }
+
+        .nav-button {
+            background-color: rgba(0, 191, 255, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        .nav-button:hover, .nav-button.active {
+            background-color: rgba(0, 191, 255, 0.3);
+            border-color: rgba(0, 191, 255, 0.8);
+            transform: translateY(-2px);
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background-color: rgba(0, 20, 40, 0.5);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .card-link:hover .info-card {
+            border-color: rgba(0, 191, 255, 0.8);
+        }
+    </style>
+</head>
+<body class="font-rajdhani text-gray-300">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+
+        <header class="text-center py-12">
+            <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">OMBRA PRIME</h1>
+            <p class="mt-4 text-lg text-cyan-300">Ett arkiv för en ny mänsklighet</p>
+        </header>
+
+        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700/50 mt-12">
+            
+            <h2 class="font-orbitron text-4xl text-cyan-300 text-glow text-center mb-8">Universums Metafysik</h2>
+
+            <section id="intro" class="mb-10 text-center">
+                <p class="text-lg leading-relaxed max-w-2xl mx-auto">Bortom den kalla fysiken av stål och stjärnstoft vilar en djupare verklighet som styr livet ombord på Ombra Prime. Denna metafysik är uppbyggd kring tre sammanlänkade koncept: The Loom, Vitalis Flux och de gåtfulla Sub-Orbs.</p>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- The Loom Section -->
+            <section id="the-loom" class="mb-10">
+                <a href="the-loom-details.html" class="card-link block no-underline">
+                    <div class="info-card">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-orbitron text-3xl text-cyan-300 mb-4">The Loom</h3>
+                            <span class="text-cyan-400 text-3xl font-light transform transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                        </div>
+                        <p class="text-lg leading-relaxed mb-6">The Loom är den grundläggande livskraften i universum, en kosmisk väv av energi och öde som genomsyrar allt. Den är inte bara en energikälla, utan själva strukturen genom vilken all livsenergi flödar. The Loom är en metafor för sammankopplingen av allt, där varje tråd representerar en livsform, en händelse eller ett öde.</p>
+                        
+                        <h4 class="font-orbitron text-xl text-cyan-400 mb-3">Vävens Natur:</h4>
+                        <ul class="space-y-2 list-disc list-inside mb-6">
+                            <li><strong>Energistruktur:</strong> Den underliggande strukturen som möjliggör flödet av Vitalis.</li>
+                            <li><strong>Ödesväv:</strong> Representerar potentialen för olika öden, där mönstret i väven avgör sannolikheter.</li>
+                            <li><strong>Kosmisk Princip:</strong> En fundamental del av universums struktur, likt rumtidens väv.</li>
+                        </ul>
+                    </div>
+                </a>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- Vitalis Flux Section -->
+            <section id="vitalis-flux" class="mb-10">
+                <a href="vitalis-flux-details.html" class="card-link block no-underline">
+                    <div class="info-card">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-orbitron text-3xl text-cyan-300 mb-4">Vitalis Flux</h3>
+                            <span class="text-cyan-400 text-3xl font-light transform transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                        </div>
+                        <p class="text-lg leading-relaxed mb-6">Vitalis Flux är den rena livsenergi som flödar genom The Loom. Det är den fundamentala byggstenen för allt liv och alla fenomen. Denna energi existerar i ett spektrum av frekvenser, var och en med unika egenskaper och potential, likt olika typer av trådar i väven.</p>
+                        
+                        <h4 class="font-orbitron text-xl text-cyan-400 mb-3">Kända Frekvenser:</h4>
+                        <ul class="space-y-3 list-inside mb-6">
+                            <li><strong class="text-green-400">Terra-frekvensen:</strong> Lågfrekvent och stabil. Kopplad till grundläggande liv, materia och det förflutna.</li>
+                            <li><strong class="text-emerald-400">Flora-frekvensen:</strong> Mellanfrekvent. Främjar växttillväxt, läkning och förnyelse.</li>
+                            <li><strong class="text-cyan-400">Fauna-frekvensen:</strong> Mellanfrekvent. Påverkar djurliv, rörelse, instinkt och medvetande.</li>
+                            <li><strong class="text-gray-300">Nexus-frekvensen:</strong> Högfrekvent och instabil. Kan subtilt manipulera rumtid i liten skala.</li>
+                            <li><strong class="text-purple-400">Chaos-frekvensen:</strong> Extremt högfrekvent och okontrollerad. Ren, ostabil energi som orsakar oförutsägbara effekter.</li>
+                        </ul>
+                    </div>
+                </a>
+            </section>
+
+            <div class="divider"></div>
+
+            <!-- Sub-Orbs Section -->
+            <section id="sub-orbs" class="mb-10">
+                <a href="sub-orbs-details.html" class="card-link block no-underline">
+                    <div class="info-card">
+                        <div class="flex justify-between items-start">
+                            <h3 class="font-orbitron text-3xl text-cyan-300 mb-4">Sub-Orbs</h3>
+                            <span class="text-cyan-400 text-3xl font-light transform transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+                        </div>
+                        <p class="text-lg leading-relaxed mb-6">Sub-Orbs är gåtfulla och kraftfulla bio-konstruerade artefakter. De är avgörande för förståelsen och manipulationen av The Loom. De fungerar som en brygga mellan den fysiska världen och den metafysiska väven, och är nycklarna till att låsa upp dess dolda potential och tolka dess "röst".</p>
+                        <p class="text-lg leading-relaxed">Deras ursprung är höljt i mystik, skapade genom Dr. Silas Vanes kontroversiella forskning som kombinerar avancerad genteknik och nanoteknologi med en ofullständig förståelse av The Loom.</p>
+                    </div>
+                </a>
+            </section>
+
+            <!-- Tillbakaknapp -->
+            <div class="mt-12 flex justify-center">
+                <a href="index.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    <span>Tillbaka</span>
+                </a>
+            </div>
+
+        </main>
+
+        <footer class="text-center py-8 mt-8">
+            <p class="text-gray-500">&copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Sätter aktuellt år i sidfoten
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script> 
+
+</body>
+</html>
