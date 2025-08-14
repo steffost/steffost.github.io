@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ombra Prime - Fysik</title>
+
+    <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Länkar in Google Fonts för ett passande typsnitt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Anpassad CSS för att finjustera designen och lägga till teman -->
+    <style>
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+        .text-glow { text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3); }
+        body { background-color: #050810; }
+
+        .nav-button {
+            background-color: rgba(0, 191, 255, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none; /* Ensure links don't have underlines */
+        }
+        .nav-button:hover, .nav-button.active {
+            background-color: rgba(0, 191, 255, 0.3);
+            border-color: rgba(0, 191, 255, 0.8);
+            transform: translateY(-2px);
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background-color: rgba(0, 20, 40, 0.5);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+<body class="font-rajdhani text-gray-300">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+
+        <header class="text-center py-12">
+            <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">OMBRA PRIME</h1>
+            <p class="mt-4 text-lg text-cyan-300">Ett arkiv för en ny mänsklighet</p>
+        </header>
+
+        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700/50 mt-12">
+            
+            <h2 class="font-orbitron text-4xl text-cyan-300 text-glow text-center mb-8">Fysikaliska Principer</h2>
+
+            <section id="klassisk-mekanik" class="mb-10">
+                <div class="info-card">
+                    <h3 class="font-orbitron text-3xl text-cyan-300 mb-4">Klassisk Mekanik</h3>
+                    <p class="text-lg leading-relaxed">
+                        Läran om rörelse, kraft och energi som styr allt från skeppets egen framdrivning till den artificiella gravitationen som håller oss förankrade. Newtons lagar är fortfarande grunden för vår dagliga existens, de osynliga regler som dikterar livet i en värld byggd av metall och vilja.
+                    </p>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section id="relativitetsteori" class="mb-10">
+                <div class="info-card">
+                    <h3 class="font-orbitron text-3xl text-cyan-300 mb-4">Relativitetsteori</h3>
+                    <p class="text-lg leading-relaxed">
+                        Einsteins teorier är inte längre abstraktioner, utan vår verklighet. Den speciella relativitetsteorin styr vår uppfattning av tid under den långa resan, där varje sekund ombord är en evighet förlorad för universum utanför. Den allmänna relativitetsteorin är nyckeln till att navigera de förvridna rymdvävar som omger stjärnor och svarta hål.
+                    </p>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+
+            <section id="kvantmekanik" class="mb-10">
+                <div class="info-card">
+                    <h3 class="font-orbitron text-3xl text-cyan-300 mb-4">Kvantmekanik</h3>
+                    <p class="text-lg leading-relaxed">
+                        Den subatomära vetenskapen som driver vår mest avancerade teknologi. Från de kvantdatorer som beräknar våra kurskorrigeringar till de underliggande principerna för "The Breather". Kvantmekaniken är den osäkra, sannolikhetsbaserade magi som tillåter oss att manipulera verkligheten på en fundamental nivå.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Tillbakaknapp -->
+            <div class="mt-12 flex justify-center">
+                <a href="vetenskap.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    <span>Tillbaka till Vetenskap</span>
+                </a>
+            </div>
+
+        </main>
+
+        <footer class="text-center py-8 mt-8">
+            <p class="text-gray-500">&copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Sätter aktuellt år i sidfoten
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script> 
+
+</body>
+</html>

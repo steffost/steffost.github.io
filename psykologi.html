@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ombra Prime - Psykologi</title>
+
+    <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Länkar in Google Fonts för ett passande typsnitt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Anpassad CSS för att finjustera designen och lägga till teman -->
+    <style>
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+        .text-glow { text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3); }
+        body { background-color: #050810; }
+
+        .nav-button {
+            background-color: rgba(0, 191, 255, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none; /* Ensure links don't have underlines */
+        }
+        .nav-button:hover, .nav-button.active {
+            background-color: rgba(0, 191, 255, 0.3);
+            border-color: rgba(0, 191, 255, 0.8);
+            transform: translateY(-2px);
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background-color: rgba(0, 20, 40, 0.5);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+<body class="font-rajdhani text-gray-300">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+
+        <header class="text-center py-12">
+            <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">OMBRA PRIME</h1>
+            <p class="mt-4 text-lg text-cyan-300">Ett arkiv för en ny mänsklighet</p>
+        </header>
+
+        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700/50 mt-12">
+            
+            <h2 class="font-orbitron text-4xl text-cyan-300 text-glow text-center mb-8">Psykologiska Studier</h2>
+
+            <section id="kognitiv-psykologi" class="mb-10">
+                <div class="info-card">
+                    <h3 class="font-orbitron text-3xl text-cyan-300 mb-4">Kognitiv Psykologi</h3>
+                    <p class="text-lg leading-relaxed">
+                        Studien av hur det mänskliga medvetandet bearbetar information, fattar beslut och formar minnen under de extrema förhållanden som råder ombord. Långvarig isolering, artificiella dygnscykler och frånvaron av naturliga horisonter har lett till unika kognitiva anpassningar och syndrom, såsom "Tomrumsfokus" och "Cyklisk Minnesdegradering".
+                    </p>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <section id="socialpsykologi" class="mb-10">
+                <div class="info-card">
+                    <h3 class="font-orbitron text-3xl text-cyan-300 mb-4">Socialpsykologi</h3>
+                    <p class="text-lg leading-relaxed">
+                        Analyserar gruppdynamik, hierarkier och sociala ritualer i ett slutet system där varje individs handlingar direkt påverkar kollektivets överlevnad. Arkivet dokumenterar framväxten av nya sociala normer, konflikthanteringsstrategier och de psykologiska effekterna av att leva i en miljö utan verklig personlig integritet.
+                    </p>
+                </div>
+            </section>
+            
+            <div class="divider"></div>
+
+            <section id="existentiell-psykologi" class="mb-10">
+                <div class="info-card">
+                    <h3 class="font-orbitron text-3xl text-cyan-300 mb-4">Existentiell Psykologi</h3>
+                    <p class="text-lg leading-relaxed">
+                        Fokuserar på individens sökande efter mening, syfte och identitet när banden till ursprungsplaneten är avskurna. Denna gren utforskar hur generationer födda i rymden hanterar frågor om dödlighet, frihet och den nedärvda uppgiften att vara mänsklighetens fortsättning, utan att någonsin ha känt jord under sina fötter.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Tillbakaknapp -->
+            <div class="mt-12 flex justify-center">
+                <a href="mening-och-medvetande.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    <span>Tillbaka till Mening & Medvetande</span>
+                </a>
+            </div>
+
+        </main>
+
+        <footer class="text-center py-8 mt-8">
+            <p class="text-gray-500">&copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Sätter aktuellt år i sidfoten
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script> 
+
+</body>
+</html>

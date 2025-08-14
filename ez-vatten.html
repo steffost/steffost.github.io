@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ombra Prime - EZ-Vatten</title>
+
+    <!-- Länkar in Tailwind CSS för snabb och responsiv design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Länkar in Google Fonts för ett passande typsnitt -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Anpassad CSS för att finjustera designen och lägga till teman -->
+    <style>
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+        .text-glow { text-shadow: 0 0 8px rgba(0, 191, 255, 0.5), 0 0 10px rgba(0, 191, 255, 0.3); }
+        body { background-color: #050810; }
+
+        .nav-button {
+            background-color: rgba(0, 191, 255, 0.1);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none; /* Ensure links don't have underlines */
+        }
+        .nav-button:hover, .nav-button.active {
+            background-color: rgba(0, 191, 255, 0.3);
+            border-color: rgba(0, 191, 255, 0.8);
+            transform: translateY(-2px);
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
+            margin: 2rem 0;
+        }
+
+        .info-card {
+            background-color: rgba(0, 20, 40, 0.5);
+            border: 1px solid rgba(0, 191, 255, 0.4);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+    </style>
+</head>
+<body class="font-rajdhani text-gray-300">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+
+        <header class="text-center py-12">
+            <h1 class="font-orbitron text-5xl md:text-7xl font-bold text-white text-glow tracking-widest">OMBRA PRIME</h1>
+            <p class="mt-4 text-lg text-cyan-300">Ett arkiv för en ny mänsklighet</p>
+        </header>
+
+        <main class="bg-gray-900 bg-opacity-50 p-6 sm:p-8 rounded-xl border border-gray-700/50 mt-12">
+            
+            <h2 class="font-orbitron text-4xl text-cyan-300 text-glow text-center mb-8">Applied Zone Physics (EZ-Vatten)</h2>
+
+            <section id="grund-teknologi" class="mb-10">
+                <div class="info-card">
+                    <h3 class="font-orbitron text-2xl text-cyan-300 mb-4">Grundläggande Teknologi</h3>
+                    <p class="text-lg leading-relaxed mb-4">
+                        En revolutionerande teknologi baserad på principen att vatten (H₂O) kan formas till en fjärde, ordnad, geléliknande fas (H₃O₂) när det kommer i kontakt med hydrofila ytor och utsätts för energi, primärt infraröd strålning. Denna process skapar rent, negativt laddat vatten och separerar det från orenheter, samtidigt som det genererar en användbar elektrisk potential.
+                    </p>
+                    <p class="text-md text-gray-400"><strong>Vetenskaplig grund:</strong> Teorin om den fjärde fasen av vatten (Exclusion Zone).</p>
+                    <p class="text-md text-gray-400"><strong>Upptäckt:</strong> Cirka 2045.</p>
+                </div>
+            </section>
+
+            <div class="divider"></div>
+
+            <h3 class="font-orbitron text-3xl text-cyan-300 text-glow text-center mb-8">Applikationer ombord</h3>
+
+            <section id="app-life-support" class="mb-10">
+                <div class="info-card">
+                    <h4 class="font-orbitron text-2xl text-cyan-300 mb-4">Aura Water Purification System (Livsuppehållande)</h4>
+                    <p class="text-lg leading-relaxed mb-2"><strong>Princip:</strong> Utnyttjar "Exclusion Zone"-effekten för att fysiskt pressa bort alla lösta partiklar, kemikalier och mikrober från vattenmolekylerna, vilket resulterar i 100% rent H₃O₂.</p>
+                    <p class="text-lg leading-relaxed mb-2"><strong>Implementation:</strong> Ett nätverk av hydrofila nanokeramiska paneler som belyses av överskottsvärme (infraröd strålning) från skeppets reaktorer. Gråvatten och avloppsvatten passerar genom systemet och separeras i rent EZ-vatten och en koncentrerad avfallsprodukt.</p>
+                    <p class="text-lg leading-relaxed"><strong>Fördel:</strong> Extremt energieffektivt, nästan inget underhåll, tyst drift och producerar vatten av högsta möjliga renhet. Ersätter klumpiga och underhållskrävande destillations- och filteranläggningar.</p>
+                </div>
+            </section>
+
+            <section id="app-energy" class="mb-10">
+                <div class="info-card">
+                    <h4 class="font-orbitron text-2xl text-cyan-300 mb-4">Hydro-Capacitor Grid (Energi)</h4>
+                    <p class="text-lg leading-relaxed mb-2"><strong>Princip:</strong> Den naturliga laddningsseparationen som sker vid bildandet av EZ-vatten (negativt EZ-vatten, positivt bulk-vatten) skapar en stabil elektrisk potential som kan utnyttjas.</p>
+                    <p class="text-lg leading-relaxed mb-2"><strong>Implementation:</strong> Decentraliserade "Hydro-Capacitor"-moduler integrerade i skeppets infrastruktur. De fungerar som batterier med konstant uppladdning och förser alla primära livsuppehållande system och interna nätverk med stabil ström.</p>
+                    <p class="text-lg leading-relaxed"><strong>Fördel:</strong> Tyst, decentraliserad och redundant energikälla. Minskar beroendet av en enda, sårbar huvudreaktor för kritiska interna system.</p>
+                </div>
+            </section>
+
+            <section id="app-defense" class="mb-10">
+                <div class="info-card">
+                    <h4 class="font-orbitron text-2xl text-cyan-300 mb-4">Aegis Gel-Hull (Försvar)</h4>
+                    <p class="text-lg leading-relaxed mb-2"><strong>Princip:</strong> Den högre densiteten och den ordnade kristallina strukturen hos EZ-vatten i geléform ger överlägsen absorption och spridning av kosmisk strålning och mikrometeoriter.</p>
+                    <p class="text-lg leading-relaxed mb-2"><strong>Implementation:</strong> Ett lager av stabiliserat EZ-gel är inneslutet mellan det yttre och inre skrovet på Ombra Prime. Gelen underhålls och energisätts av ett fint nätverk av IR-emitters.</p>
+                    <p class="text-lg leading-relaxed"><strong>Fördel:</strong> Ett dynamiskt, delvis självläkande strålskydd som är lättare och effektivare än traditionella material som bly eller tjocka kompositer.</p>
+                </div>
+            </section>
+
+            <section id="app-medical" class="mb-10">
+                <div class="info-card">
+                    <h4 class="font-orbitron text-2xl text-cyan-300 mb-4">The Breather Protocol (Medicin)</h4>
+                    <p class="text-lg leading-relaxed mb-2"><strong>Princip:</strong> Långvarig rymdvistelse (mikrogravitation, strålning) stör kroppens förmåga att bibehålla en hälsosam nivå av EZ-vatten i cellerna, vilket leder till degeneration. "The Breather" motverkar detta.</p>
+                    <p class="text-lg leading-relaxed mb-2"><strong>Implementation:</strong> En kombination av teknologier (implantat, regenereringskammare, dräkter) som använder specifika frekvenser av ljus och andra energiformer för att kontinuerligt "ladda" kroppens vatten och säkerställa att det bibehåller sin optimala EZ-struktur.</p>
+                    <p class="text-lg leading-relaxed"><strong>Fördel:</strong> Löser de fundamentala biologiska hindren för långvarig rymdfärd, såsom muskelatrofi, benskörhet och cellskador. Gör människan kapabel att överleva resorna mellan stjärnorna.</p>
+                </div>
+            </section>
+
+            <!-- Tillbakaknapp -->
+            <div class="mt-12 flex justify-center">
+                <a href="kemi.html" class="nav-button text-white font-semibold py-2 px-5 rounded-lg flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                    </svg>
+                    <span>Tillbaka till Kemi</span>
+                </a>
+            </div>
+
+        </main>
+
+        <footer class="text-center py-8 mt-8">
+            <p class="text-gray-500">&copy; <span id="year"></span> Steffo. Alla rättigheter förbehållna.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Sätter aktuellt år i sidfoten
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script> 
+
+</body>
+</html>
